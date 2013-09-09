@@ -1,0 +1,21 @@
+OK - Comentario Editable  -> PDF
+OK - Poner contacto en PDF
+OK - Volumen Gas 1 decimal
+OK - Dice Cilidro -> Datos del cilindro
+OK - Resolver Patrones Usados
+- Generar Certificado para gases puros.
+
+
+
+OK - Volumen por default es volumen de gas
+- Administrador de Producto Componente
+- Paginación en páginas.
+- Imprimir Etiqueta
+- Buscar Cliente por Nombre
+- Validar Integridad
+OK - Buscar Lotes en FFOO
+OK - Desviación Absoluta = Desviación Real / 100 * Valor analisis (5*200/100=10)
+- Tipo Producto determinar con las tablas que nos harán llegar.
+- Tolerancia Preparación asociado al producto
+- Integración con Active Directory
+

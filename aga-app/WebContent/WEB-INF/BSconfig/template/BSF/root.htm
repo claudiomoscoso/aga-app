@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>BuilderSoft Demo Software</title>
+<link rel="stylesheet" type="text/css" href="public/css/default.css" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="public/dCalendar/calendar-yellow.css" title="win2k-cold-1" />
+
+<script type="text/javascript" src="public/js/framework.js">&nbsp;</script>
+<script type="text/javascript" src="public/dCalendar/calendar.js">&nbsp;</script>
+<script type="text/javascript"
+	src="public/dCalendar/lang/calendar-es.js">&nbsp;</script>
+<script type="text/javascript" src="public/dCalendar/calendar-setup.js">&nbsp;</script>
+</head>
+<body onload="javaScript:loadFormat();try{onLoadPage();}catch(e){}">
+<img src="public/img/logo.gif" alt="AGA" style="height:70px" />
+
+<form action="ControlServlet" method="post"><input type="hidden"
+	name="bsServiceName" value="USR.validLogin">
+<table>
+	<tr>
+		<td><span class="cLabel">Login</span></td>
+		<td><input type="text" name="fldLogin" id="fldLogin"></td>
+	</tr>
+	<tr>
+		<td><span class="cLabel">Password</span></td>
+		<td><input type="password" name="fldPassword" id="fldPassword"  ></td>
+	</tr>
+</table>
+<input type="submit" value="Ingresar..."></form>
+
+<xsl:copy-of select="/" />
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		
+		<h1 class="cTitle">Búsqueda de productos</h1>
+		<form action="ControlServlet" name="frm">
+			<input type="hidden" name="bsServiceName" value="BSK.DoSerachProduct"/>
+			<input type="text" name="fldProductName"/><br/>
+			
+			<br/>
+			<bs.Service Class="cl.builderSoft.product.k.service.MakeKeyboard">frm.fldProductName</bs.Service>
+			<br/>
+			<br/>
+			<input type="submit" value="Buscar..."/>
+		</form>
+
+	</xsl:template>
+</xsl:stylesheet>

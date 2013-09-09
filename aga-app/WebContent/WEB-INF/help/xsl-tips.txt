@@ -1,0 +1,13 @@
+<xsl:value-of select="substring-after(anafec,';')"/>
+
+
+
+<xsl:output method="html" indent="yes" encoding="UTF-8" />
+<xsl:value-of select="format-number(., '###.###', 'NUM-CL')"/>
+
+
+
+
+Lo del Tooltip, mirar en
+ShowDetail.xsl
+flow.js

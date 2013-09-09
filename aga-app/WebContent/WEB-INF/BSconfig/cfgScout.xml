@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<Services>
+
+		<Service ID="SCO.ListPersona">
+			<Process ID="ListScout" />
+			<Process ID="ListGrupos" />
+			<Template ID="listPersona.xsl" />
+		</Service>
+
+		<Service ID="SCO.FormNuevoMMBB">
+			<Process ID="ListComuna" />
+			<Process ID="ListReligion" />
+			<Process ID="ListNacionalidad" />
+			<Process ID="ListUnidad" />
+			<Process ID="ListGrupos" />
+			<Template ID="registroMMBB.xsl" />
+		</Service>
+
+		<Service ID="SCO.FormNuevoDYG">
+			<Process ID="ListComuna" />
+			<Process ID="ListReligion" />
+			<Process ID="ListNacionalidad" />
+			<Process ID="ListUnidad" />
+			<Process ID="ListGrupos" />
+			<Process ID="ListCargo" />
+			<Template ID="registroDYG.xsl" />
+		</Service>
+
+		<Service ID="SCO.FormApoderado">
+			<Process ID="ListComuna" />
+			<Template ID="registroApoderado.xsl" />
+		</Service>
+
+		<Service ID="SCO.BuscaApoderado">
+			<Process ID="BuscaPorRut" />
+			<Process ID="BuscaMMBBs" />
+			<Template ID="buscaApoderado.xsl" />
+		</Service>
+
+		<Service ID="SCO.BuscaMMBB">
+			<Process ID="BuscaPorID" />
+			<Process ID="BuscaRelacionApoderadoMMBB" />
+			<If Condition="count(/Service/Response/Fields/BuscaRelacionApoderadoMMBB/Record) &gt; 0" True="BSF.error" False="" />
+			<Process ID="GrabaRelacion" />
+			<Template ID="buscaMMBB.xsl" />
+		</Service>
+
+		<Service ID="SCO.MMBBRelacionado">
+			<Template ID="MMBB.xsl" />
+		</Service>
+
+		<Service ID="SCO.GrabaApoderado">
+			<Process ID="IncrementaComuna" />
+			<Process ID="BuscaPorRut" />
+			<Process ID="SavePersona" />
+			<Template ID="apoderadoGrabado.xsl" />
+		</Service>
+
+		<Service ID="SCO.GrabarMMBB">
+			<Process ID="ExisteRut" />
+			<If
+				Condition="/Service/Response/Fields/ExisteRut/Record/cuenta &gt; 0 and string-length(/Service/Request/Fields/fldRUT) &gt; 0"
+				True="SCO.FormNuevoMMBB" False="" />
+			<Process ID="IncrementaComuna" />
+			<Process ID="IncrementaReligion" />
+			<Process ID="IncrementaNacionalidad" />
+			<Process ID="IncrementaGrupo" />
+			<Process ID="IncrementaUnidad" />
+			<Process ID="SavePersona" />
+			<Process ID="SaveScout" />
+			<Process ID="SaveMMBB" NextService="SCO.ListPersona" />
+		</Service>
+
+		<Service ID="SCO.GrabarDYG">
+			<Process ID="ExisteRut" />
+			<If Condition="/Service/Response/Fields/ExisteRut/Record/cuenta &gt; 0" True="SCO.FormNuevoDYG" False="" />
+			<Process ID="IncrementaComuna" />
+			<Process ID="IncrementaReligion" />
+			<Process ID="IncrementaNacionalidad" />
+			<Process ID="IncrementaGrupo" />
+			<Process ID="IncrementaUnidad" />
+			<Process ID="BuscaPorRut" />
+			<Process ID="SavePersona" />
+			<Process ID="SaveScout" />
+			<Process ID="SaveDYG" NextService="SCO.ListPersona" />
+		</Service>
+
+		<Service ID="SCO.Admin">
+			<Process ID="ConsolidadoGrupos" />
+			<Template ID="AdminDistri.xsl" />
+		</Service>
+
+		<Service ID="SCO.DetalleGrupo">
+			<Process ID="DetalleGrupo" />
+			<Process ID="BuscaGrupo" />
+			<Process ID="ValorCategoria" />
+			<Template ID="detalleGrupo.xsl" />
+		</Service>
+
+		<Service ID="SCO.EstadoGrupo">
+			<Process ID="EstadoGrupo" NextService="SCO.Admin" />
+		</Service>
+
+		<Service ID="SCO.RealizarPago">
+			<Process ID="RealizarPago" NextService="SCO.Admin" />
+		</Service>
+
+		<Service ID="SCO.EditPersona">
+			<Process ID="BuscaPorID" />
+			<If Condition="/Service/Response/Fields/BuscaPorID/Record/cTabla='tMMBB'" True="SCO.EditMMBB" False="" />
+			<If Condition="/Service/Response/Fields/BuscaPorID/Record/cTabla='tDYG'" True="SCO.EditDYG" False="SCO.ListPersona" />
+		</Service>
+
+		<Service ID="SCO.EditMMBB">
+			<Process ID="ListComuna" />
+			<Process ID="ListReligion" />
+			<Process ID="ListNacionalidad" />
+			<Process ID="ListUnidad" />
+			<Process ID="ListGrupos" />
+			<Process ID="BuscaMMBB" />
+			<Template ID="editMMBB.xsl" />
+		</Service>
+
+		<Service ID="SCO.EditDYG">
+			<Process ID="ListComuna" />
+			<Process ID="ListReligion" />
+			<Process ID="ListNacionalidad" />
+			<Process ID="ListUnidad" />
+			<Process ID="ListGrupos" />
+			<Process ID="ListCargo" xNextService="BSF.ShowService" />
+			<Process ID="BuscaDYG" xNextService="BSF.ShowService" />
+			<Template ID="editDYG.xsl" />
+		</Service>
+
+		<Service ID="SCO.UpdateMMBB">
+			<Process ID="UpdatePersona" />
+			<Process ID="UpdateScout" />
+			<Process ID="UpdateMMBB" NextService="SCO.ListPersona" />
+		</Service>
+
+		<Service ID="SCO.UpdateDYG">
+			<Process ID="UpdatePersona" />
+			<Process ID="UpdateScout" />
+			<Process ID="UpdateDYG" NextService="SCO.ListPersona" />
+		</Service>
+
+		<Service ID="SCO.Migration">
+			<Process ID="Migration" NextService="BSF.ShowService" />
+		</Service>
+
+	</Services>
+
+	<Classes>
+		<Class ID="ListCargo" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListComuna" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListGrupos" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListUnidad" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListScout" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListReligion" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListNacionalidad" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ListUnidad" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ExisteRut" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="EstadoGrupo" Name="cl.builderSoft.scout.EstadoGrupo" />
+		<Class ID="IncrementaComuna" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="IncrementaReligion" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="IncrementaNacionalidad" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="IncrementaGrupo" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="IncrementaUnidad" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="SaveDYG" Name="cl.builderSoft.scout.SaveDyG" />
+		<Class ID="SaveMMBB" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="SavePersona" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="SaveScout" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="BuscaPorRut" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="BuscaPorID" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="BuscaApoderadoPorRut" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="BuscaRelacionApoderadoMMBB" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="GrabaRelacion" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="BuscaMMBBs" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ConsolidadoGrupos" Name="cl.builderSoft.scout.ConsolidadoGrupos" />
+		<Class ID="DetalleGrupo" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="ValorCategoria" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="RealizarPago" Name="cl.builderSoft.scout.RealizarPago" />
+		<Class ID="BuscaMMBB" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="UpdatePersona" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="UpdateScout" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="UpdateMMBB" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="BuscaDYG" Name="cl.builderSoft.scout.BuscaDYG" />
+		<Class ID="UpdateDYG" Name="cl.builderSoft.scout.UpdateDYG" />
+		<Class ID="BuscaGrupo" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+
+		<Class ID="Migration" Name="cl.builderSoft.scout.Migration" />
+	</Classes>
+
+</Module>

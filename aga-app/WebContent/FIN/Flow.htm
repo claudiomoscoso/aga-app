@@ -1,0 +1,297 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Flujo</title>
+<style type="text/css" media="style.css">
+</style>
+
+<LINK rel="stylesheet" type="text/css" href="style.css"/>
+
+<script src="FlowJS.js" ></script>
+
+</head>
+
+
+<body>
+
+<!-- <! DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+
+<H1 class="cTitle">Flujo</H1>
+<hr />
+
+<table>
+	<tr>
+		<td>Empresa:</td>
+		<td colspan="3"><select>
+			<option value="">- Grupo Economico -</option>
+			<option value="1">INGEIN</option>
+			<option value="2">Ecovial</option>
+			<option value="3">Transvial</option>
+			<option value="4">Mixvial Curico</option>
+			<option value="5">Mixvial Rancagua</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>Banco:</td>
+		<td colspan="3"><select>
+			<option value="">- Todos los Bancos -</option>
+			<option value="1">Banco Chile</option>
+			<option value="2">BCI</option>
+			<option value="3">Itau</option>
+			<option value="4">Desarrollo</option>
+			<option value="5">Santander</option>
+		</select></td>
+	</tr>
+	<tr>
+		<td>Fecha Inicio</td>
+		<td><input /></td>
+		<td>Fecha Termino</td>
+		<td><input /></td>
+</table>
+
+<br />
+<!-- 
+		<table>
+			<tr>
+				<td>Empresa</td>
+				<td>Fecha</td>
+			</tr>
+		</table>
+ -->
+<table id="tblEmpresa" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="concept">Empresa</td>
+		<td class="concept" width="80px">05-05-2008</td>
+		<td class="concept" width="80px">06-05-2008</td>
+		<td class="concept" width="80px">07-05-2008</td>
+		<td class="concept" width="80px">08-05-2008</td>
+		<td class="concept" width="80px">09-05-2008</td>
+		<td class="concept" width="80px">10-05-2008</td>
+		<td class="concept" width="80px">11-05-2008</td>
+
+	</tr>
+	<tr class="par">
+		<td class="concept" style="cursor:pointer" onclick="javasript:clickCell(this)">-&nbsp;Ingein</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">2.000.000</td>
+		<td width="80px" class="number">25.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">8.000.000</td>
+	</tr>
+
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Banco Chile</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">500.000</td>
+		<td width="80px" class="number">10.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">3.000.000</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Egresos</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-">-3.200.000</td>
+		<td width="80px" class="number-">-1.000.000</td>
+		<td width="80px" class="number-">-700.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-">-5.000.000</td>
+	</tr>
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gastos
+		Bancarios</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-Link">-1.500.000</td>
+		<td width="80px" class="number-Link">-500.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-Link">-5.000.000</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Otros
+		Gastos</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-Link">-500.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-Link">-200.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remuneraciones</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Proveedores</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-Link">-1.200.000</td>
+		<td width="80px" class="number-Link">-500.000</td>
+		<td width="80px" class="number-Link">-500.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Ingresos</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">2.000.000</td>
+		<td width="80px" class="number">5.200.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">1.200.000</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estimados</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="numberLink">1.000.000</td>
+		<td width="80px" class="numberLink">4.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="numberLink">1.000.000</td>
+	</tr>
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reales</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="numberLink">1.000.000</td>
+		<td width="80px" class="numberLink">1.200.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="numberLink">200.000</td>
+	</tr>
+	<!-- 
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Acumulado</td>
+		<td width="80px" class="number">3.000.000</td>
+		<td width="80px" class="number">3.000.000</td>
+		<td width="80px" class="number">1.800.000</td>
+		<td width="80px" class="number">6.000.000</td>
+		<td width="80px" class="number">5.300.000</td>
+		<td width="80px" class="number">5.300.000</td>
+		<td width="80px" class="number">1.500.000</td>
+	</tr>
+	 -->
+	<tr class="par">
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;Santander</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">10.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;BCI</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">10.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-">-5.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;Desarrollo</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">500.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr>
+		<td class="concept">&nbsp;&nbsp;&nbsp;&nbsp;+&nbsp;Itaú</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">1.500.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">+&nbsp;Ecovial</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">22.000.000</td>
+		<td width="80px" class="number">23.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr>
+		<td class="concept">+&nbsp;Transvial</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">7.000.000</td>
+		<td width="80px" class="number">26.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">+&nbsp;Mixvial Curico</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">500.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">1.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">2.000.000</td>
+	</tr>
+	<tr>
+		<td class="concept">+&nbsp;Mixvial Rancagua</td>
+		<td width="80px" class="number">4.560.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number-">-5.000.000</td>
+		<td width="80px" class="zero">0</td>
+		<td width="80px" class="number">15.000.000</td>
+		<td width="80px" class="zero">0</td>
+	</tr>
+	<tr class="par">
+		<td class="concept">Total</td>
+		<td width="80px" class="number">4.560.000</td>
+		<td width="80px" class="number">10.500.000</td>
+		<td width="80px" class="number">29.800.000</td>
+		<td width="80px" class="number-">53.200.000</td>
+		<td width="80px" class="number">300.000</td>
+		<td width="80px" class="number">15.000.000</td>
+		<td width="80px" class="number-">-1.800.000</td>
+	</tr>
+	<tr>
+		<td colspan="8">
+		<table width="100%">
+			<tr>
+				<td class="concept"><a href="#"><< 28/04/2008 - 04/05/2008</a></td>
+				<td class="concept" align="right"><a href="#">12/05/2008 -
+				18/05/2008 >></a></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+
+
+</table>
+ 
+
+
+
+</body>
+</html>

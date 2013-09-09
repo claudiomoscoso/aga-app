@@ -1,0 +1,16 @@
+delete from tRol;
+delete from tR_RolOption;
+delete from tUser;
+
+
+insert into tRol (cID, cName, cDeleted) values ('00000000000000000000', 'Administrador de Sistema', 0);
+
+insert into tR_RolOption (cID, cRol, cOption) VALUES ('00000000000000000000', '00000000000000000000', '01');
+insert into tR_RolOption (cID, cRol, cOption) VALUES ('00000000000000000001', '00000000000000000000', '0101');
+insert into tR_RolOption (cID, cRol, cOption) VALUES ('00000000000000000002', '00000000000000000000', '0102');
+insert into tR_RolOption (cID, cRol, cOption) VALUES ('00000000000000000003', '00000000000000000000', '0103');
+insert into tR_RolOption (cID, cRol, cOption) VALUES ('00000000000000000004', '00000000000000000000', '0104');
+
+insert into tUser (cID, cLogin, cName, cMail, cRol, cPhone, cMovil, cDeleted, cCreationDate, cCreatorID, cInfo, cPassword, cEnable) 
+VALUES ('00000000000000000000', 'admin', 'Administrador de Sistema', 'info@buildersoft.cl', '00000000000000000000', '---', '---', 0, '2005-01-01 00:00:00.000', '0', '', '21232f297a57a5a743894a0e4a801fc3', 1);
+

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+
+		<h1 class="cTitle">Nuevo producto</h1> 
+		<form action="ControlServlet" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="bsServiceName" value="BSK.saveProduct" />
+
+			<xsl:choose>
+				<xsl:when test="/Service/Response/Fields/ProductType">
+					<INPUT type="hidden" name="fldParent" value="{/Service/Response/Fields/ProductType}" />
+				</xsl:when>
+				<xsl:otherwise>
+					<input type="hidden" name="fldParent" value="{/Service/Request/Fields/fldParent}" />
+				</xsl:otherwise>
+			</xsl:choose>
+
+			<table border="0" width="100%">
+				<tr>
+					<td valign="top">
+						<table>
+							<tr>
+								<td class="cLabel">C@oacute;digo:</td>
+								<td class="cData">[nuevo]</td>
+							</tr>
+							<tr>
+								<td class="cLabel">Nombre:</td>
+								<td>
+									<input type="text" name="fldName" />
+								</td>
+							</tr>
+
+							<tr>
+								<td class="cLabel">Categoria:</td>
+								<td class="cData">
+
+									<xsl:choose>
+										<xsl:when test="count(/Service/Response/Fields/ProductTypeName/Record)&gt;0">
+											<xsl:value-of select="/Service/Response/Fields/ProductTypeName/Record/cName" />
+										</xsl:when>
+										<xsl:otherwise>Raiz</xsl:otherwise>
+									</xsl:choose>
+								</td>
+							</tr>
+
+							<tr>
+								<td class="cLabel">Valor:</td>
+								<td>
+									<input type="text" name="fldValue" />
+								</td>
+							</tr>
+							<tr>
+								<td valign="top" class="cLabel">Descripci@oacute;n:</td>
+								<td>
+									<textarea name="fldDescription">Ingrese descripcion...</textarea>
+								</td>
+							</tr>
+						</table>
+
+					</td>
+					<!--Attributos-->
+					<!--<td>*
+						<xsl:value-of select="count(/Response/Fields/Attributes/row)"/>*</td>
+					-->
+					<xsl:if test="count(/Service/Response/Fields/Attributes/Record)>0">
+						<td valign="top">
+							<table class="cList" cellpadding="0" cellspacing="0">
+								<tr>
+									<td class="cHeadTD">Atributo</td>
+									<td class="cHeadTD">Valor</td>
+								</tr>
+								<xsl:for-each select="/Service/Response/Fields/Attributes/Record">
+									<tr>
+										<td class="cDataTD" nowrap="">
+											<xsl:value-of select="cName" />
+										</td>
+										<td class="cDataTD">
+											<input type="text" name="fldAttr{cID}" />
+										</td>
+									</tr>
+								</xsl:for-each>
+							</table>
+
+						</td>
+					</xsl:if>
+				</tr>
+			</table>
+
+			<table class="cList" cellpadding="0" cellspacing="0">
+				<caption>Conjunto de imagenes</caption>
+				<xsl:for-each select="/Service/Response/Fields/ImageType/Record">
+					<tr>
+						<td class="cDataTD">
+							<xsl:value-of select="cName" />
+						</td>
+						<td>
+							<input type="file" name="fldImage{cID}" />
+						</td>
+					</tr>
+				</xsl:for-each>
+			</table>
+			<hr />
+			<input type="submit" value="Aceptar" />
+			&#160;&#160;
+			<input type="button" value="Cancelar"
+				onclick="self.location.href='ControlServlet?bsServiceName=BSK.categoriaIndex&amp;fldProduct={/Service/Request/Fields/fldParent}'" />
+		</form>
+<!-- 
+		<xsl:copy-of select="/" />
+ -->
+
+	</xsl:template>
+</xsl:stylesheet>
