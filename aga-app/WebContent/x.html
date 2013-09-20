@@ -1,222 +1,45 @@
 <html>
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>BuilderSoft Software</title>
-<link rel="stylesheet" type="text/css" href="public/css/default.css">
-<link rel="stylesheet" type="text/css" media="all"
-	href="public/dCalendar/calendar-yellow.css" title="win2k-cold-1">
-<link rel="stylesheet" type="text/css" href="public/css/sdmenu.css"
-	title="win2k-cold-1">
-<script type="text/javascript" src="public/js/sdmenu.js"></script>
-<script type="text/javascript" src="public/js/prototype151.js"></script>
-<script type="text/javascript" src="public/js/BSServiceData.js"></script>
-
-<script type="text/javascript" language="JavaScript1.1">
-<!--
-	var myMenu;
-
-	window.onload = function() {
-
-		myMenu = new SDMenu("my_menu");
-
-		myMenu.init();
-
-		myMenu.speed = 5;
-
-		//myMenu.expandMenu(myMenu.submenus[0]);
-
-		//					loadFormat();
-
-		try {
-
-			onLoadPage();
-
-		}
-
-		catch (e) {
-		}
-
-	};
-	-->
-</script>
+<title>BuilderSoft Software.</title>
 </head>
 <body>
-
 	<div id="divContainer"
 		style="position: absolute; top: 0; left: 0; height: 300; width: 300; background-color: #FF5500; opacity: 0.5; z-index: 1">
 		<div>
-			<input value="hola" type="button">
+			<form class="form-horizontal" action='' method="POST">
+				<fieldset>
+					<div id="legend">
+						<legend class="">Login</legend>
+					</div>
+					<div class="control-group">
+						<!-- Username -->
+						<label class="control-label" for="username">Username</label>
+						<div class="controls">
+							<input type="text" id="username" name="username" placeholder=""
+								class="input-xlarge">
+						</div>
+					</div>
+
+					<div class="control-group">
+						<!-- Password-->
+						<label class="control-label" for="password">Password</label>
+						<div class="controls">
+							<input type="password" id="password" name="password"
+								placeholder="" class="input-xlarge">
+						</div>
+					</div>
+
+
+					<div class="control-group">
+						<!-- Button -->
+						<div class="controls">
+							<button class="btn btn-success">Login</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
 		</div>
 	</div>
-
-
-
-	<p>
-	<table border="0">
-
-		<tr>
-			<td colspan="2"><img alt="Buildersoft" style="height: 70px"
-				src="public/img/logo.gif" border="0"><a
-				href="ControlServlet?bsServiceName=BSF.logoff"><img alt="Salir"
-					src="public/img/logout.gif" border="0"></a></td>
-		</tr>
-		<tr>
-			<td valign="top">
-				<div class="sdmenu" id="my_menu" style="float: left">
-					<div>
-						<span>BSK</span> <a
-							href="?bsServiceName=BSK.categoriaIndex&amp;fldWidthProduct=1&amp;Option=0201">Categorias</a>
-						<a href="?bsServiceName=BSK.ReadConfig&amp;Option=0202">Configuracion</a>
-					</div>
-					<div>
-						<span>Registro</span> <a
-							href="?bsServiceName=SCO.ListPersona&amp;Option=0301">Registro</a>
-						<a href="?bsServiceName=SCO.Admin&amp;Option=0302">Adm.Distrital</a>
-
-					</div>
-					<div>
-						<span>Prestaciones</span> <a
-							href="?bsServiceName=MED.Files&amp;Option=0401">Archivos</a> <a
-							href="?bsServiceName=MED.InitAppointment&amp;Option=0402">Reserva
-							Horas</a>
-					</div>
-					<div>
-						<span>Administracion</span> <a
-							href="?bsServiceName=USR.listUser&amp;Option=0101">Usuarios</a> <a
-							href="?bsServiceName=USR.ListRol&amp;Option=0102">Grupo</a> <a
-							href="?bsServiceName=USR.permiso&amp;Option=0103">Permiso de
-							Grupos</a> <a
-							href="?bsServiceName=USR.prepareCambioClave&amp;Option=0104">Cambio
-							de Clave</a> <a href="?bsServiceName=ACO.ListPages&amp;Option=0105">Contenidos</a>
-					</div>
-				</div>
-
-			</td>
-			<td valign="top">
-
-
-				<h1 class="cTitle">Reserva de Hora para pacientes</h1>
-				<table border="0">
-					<tr>
-						<td colspan="2" class="cLabel">Buscar por...</td>
-					</tr>
-					<tr>
-						<td class="cLabel"><input
-							onclick="javascript:cambiaTipoBusqueda()"
-							id="TipoBusquedaEspecialidad" name="TipoBusqueda" type="radio"
-							checked> Especialidad</td>
-						<td class="cLabel"><input
-							onclick="javascript:cambiaTipoBusqueda()" id="TipoBusquedaMedico"
-							name="TipoBusqueda" type="radio" disabled> M&eacute;dico
-						</td>
-
-					</tr>
-				</table>
-				<div id="divPorEspecialidad">
-					<table width="100%" border="0">
-						<tr>
-							<td class="cLabel">Especialidad</td>
-							<td><select id="Especialidad"
-								onchange="javascript:cambiaEspecialidad();"><option
-										value="">-Seleccionar -</option>
-									<option value="3">Alergolog&iacute;a</option>
-									<option value="7">Algolog&iacute;a</option>
-									<option value="14">Anestesiolog&iacute;a</option>
-									<option value="16">Angiolog&iacute;a y cirug&iacute;a
-										vascular</option>
-									<option value="19">Audiolog&iacute;a, foniatr&iacute;a</option>
-									<option value="4">Bariatr&iacute;a</option>
-									<option value="6">Cardiolog&iacute;a</option>
-									<option value="15">Cirug&iacute;a pl&aacute;stica y
-										reconstructiva</option>
-									<option value="17">Coloproctolog&iacute;a</option>
-									<option value="18">Dentista</option>
-									<option value="20">Dermatolog&iacute;a</option>
-									<option value="8">Dermatolog&iacute;a
-										pedi&aacute;trica</option>
-									<option value="11">Endocrinolog&iacute;a</option>
-									<option value="5">Endodoncia</option>
-									<option value="12">Endoscop&iacute;a</option>
-									<option value="1">Gastroenterolog&iacute;a</option>
-									<option value="9">Medicina General</option>
-									<option value="10">Otorrino</option>
-									<option value="13">Pediatra</option>
-									<option value="2">Podologo</option></select></td>
-
-						</tr>
-						<tr>
-							<td class="cLabel">Instituci&oacute;n</td>
-							<td><select id="Institution"
-								onchange="javascript:cambiaInstitution();"><option
-										value="">- Seleccionar -</option></select></td>
-						</tr>
-						<tr>
-							<td class="cLabel">Lugar de Atenci&oacute;n</td>
-							<td><select id="Location"
-								onchange="javascript:cambiaLocation();"><option
-										value="">- Seleccionar -</option></select></td>
-						</tr>
-						<tr>
-							<td class="cLabel">Horario / M&eacute;dico</td>
-							<td><select id="Horario1"
-								onchange="javascript:cambiaFecha();"><option value="">-
-										Seleccionar -</option></select><select id="Professional1"
-								onchange="javascript:cambiaMedico();"><option value="">-
-										Seleccionar -</option></select><span class="cLabel">hh</span><input id="Hour1"
-								size="2" type="text"><span class="cLabel">mm</span><input
-								id="Hour1" size="2" type="text"><span class="cLabel">Duraci&oacute;n</span><input
-								size="2" type="text"></td>
-
-						</tr>
-						<tr>
-							<td class="cLabel">Paciente</td>
-							<td><input name="fldPatient" id="fldPatient" size="5"
-								type="hidden" readonly><span class="cLabel">RUT:</span><input
-								id="RutPatient" size="10" type="text"> &nbsp; <span
-								class="cLabel">Nombre:</span><input id="NamePatient" size="30"
-								type="text"> &nbsp; <input
-								onclick="javascript:buscaPaciente();" value="Buscar..."
-								type="button"></td>
-						</tr>
-						<tr>
-							<td valign="top" class="cLabel">Observaciones:</td>
-							<td><textarea style="width: 100%" id="Comment"></textarea></td>
-						</tr>
-					</table>
-				</div> <br>
-				<table align="center">
-					<tr>
-						<td colspan="2"><input onclick="javascript:aceptar()"
-							type="button" value="Aceptar"></td>
-					</tr>
-				</table>
-				<div>
-					<div id="divPatients"></div>
-				</div>
-				<form action="/app" method="post" id="f">
-					<input id="bsServiceName" name="bsServiceName" type="hidden">
-					<input id="fldSpeciality" name="fldSpeciality" type="hidden">
-					<input id="fldInstitution" name="fldInstitution" type="hidden">
-					<input id="fldLocation" name="fldLocation" type="hidden"> <input
-						id="fldPatientRut" name="fldPatientRut" type="hidden"> <input
-						id="fldProfessional" name="fldProfessional" type="hidden">
-					<input id="fldHour" name="fldHour" type="hidden"> <input
-						id="fldMinute" name="fldMinute" type="hidden"> <input
-						id="fldPatient" name="fldPatient" type="hidden"> <input
-						id="fldPatientName" name="fldPatientName" type="hidden"> <input
-						id="fldDateAppointment" name="fldDateAppointment" type="hidden">
-					<input id="fldStartDate" name="fldStartDate" type="hidden">
-					<input id="fldEndDate" name="fldEndDate" type="hidden">
-				</form> <script type="text/javascript"
-					src="public/js/MED/JSAppointment.js "></script> <!-- 
-</div>
- -->
-
-			</td>
-		</tr>
-	</table>
-	<br>
-	<hr>
-
 </body>
 </html>
