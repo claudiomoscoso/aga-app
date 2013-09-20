@@ -5,7 +5,7 @@
 		cl.builderSoft.framework.database.impl2.BSConnectionSingle
 	</ConnectionClass>
 
-<!-- 
+
 	<DataSource ID="SLC">
 		<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
 		<URL>jdbc:microsoft:sqlserver://mlgsclmai006\mlgcldb001:1433;DatabaseName=BS_AGA09
@@ -52,7 +52,7 @@
 		<PoolSize>5</PoolSize>
 		<JNDI>jdbc/TestDB</JNDI>
 	</DataSource>
- -->
+ 
 
 	<!-- <DataSource ID="SLC"> <Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver> 
 		<URL>jdbc:microsoft:sqlserver://10.30.16.34:1433;DatabaseName=BS_AGA09</URL> 
@@ -64,7 +64,7 @@
 		<Active>1</Active> <PoolSize>5</PoolSize> <JNDI>jdbc/TestDB</JNDI> </DataSource> -->
 
 
-  
+  <!-- 
 	<DataSource ID="SLC">
 		<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
 		<URL>jdbc:sqlserver://localhost:1433;DatabaseName=BS_AGA09</URL>
@@ -108,7 +108,7 @@
 		<PoolSize>5</PoolSize>
 		<JNDI>jdbc/TestDB</JNDI>
 	</DataSource>
-
+-->
 
 
 	<Providers>

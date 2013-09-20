@@ -174,11 +174,13 @@
 						<tr>
 							<td>
 								<img border="0"
-									src="public/img/logo-aga.gif" style="height:70px"
+									src="public/img/logo-aga.gif?{/Service/Session/@ID}" style="height:120px"
 									alt="Linde AGA" />
 								<!--
+								<xsl:value-of select="/Service/Session/@ID"/>
 									<img border="0" src="public/img/logo.gif" style="height:70px" alt="Buildersoft" />
 								-->
+
 							</td>
 							<td align="right">
 								<a
