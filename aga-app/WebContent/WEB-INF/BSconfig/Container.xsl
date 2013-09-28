@@ -175,7 +175,7 @@
 							<td>
 								<img border="0"
 									src="public/img/logo-aga.gif?{/Service/Session/@ID}" style="height:120px"
-									alt="Linde AGA" />
+									alt="Linde" />
 								<!--
 								<xsl:value-of select="/Service/Session/@ID"/>
 									<img border="0" src="public/img/logo.gif" style="height:70px" alt="Buildersoft" />

@@ -5,7 +5,7 @@
 	<xsl:template match="/">
 		<xsl:element name="html">
 			<body>
-				Buildersoft
+				Buildersoft.
 				<br />
 				<form action="ControlServlet" method="post">
 					<input type="hidden" name="bsServiceName" value="USR.validLogin" />

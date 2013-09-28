@@ -2,7 +2,8 @@
 <Module>
 	<Services>
 		<Service ID="BSF.root">
-			<Template ID="LoginForm.xsl" UseContainer="0" />
+			<Template ID="LoginForm-html5.xsl" UseContainer="0" />
+			<!-- LoginForm.xsl  -->
 		</Service>
 
 		<Service ID="BSF.LoginForm">
