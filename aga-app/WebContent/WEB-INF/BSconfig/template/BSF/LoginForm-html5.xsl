@@ -12,7 +12,7 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta name="description" content="" />
 				<meta name="author" content="" />
-				<link href="/{/Service/Context/SiteName}/bootstrap/css/bootstrap.css"
+				<link href="/{/Service/Context/SiteName}/bootstrap_231/css/bootstrap.css"
 					rel="stylesheet" />
 
 				<style type="text/css">
@@ -85,30 +85,30 @@
 					value="Ingresar..." /> </form> -->
 
 
-				<script src="/{/Service/Context/SiteName}/bootstrap/js/jquery.js"></script>
+				<script src="/{/Service/Context/SiteName}/bootstrap_231/js/jquery.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-transition.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-transition.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-alert.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-alert.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-modal.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-modal.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-dropdown.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-dropdown.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-scrollspy.js"></script>
-				<script src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-tab.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-scrollspy.js"></script>
+				<script src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-tab.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-tooltip.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-tooltip.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-popover.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-popover.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-button.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-button.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-collapse.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-collapse.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-carousel.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-carousel.js"></script>
 				<script
-					src="/{/Service/Context/SiteName}/bootstrap/js/bootstrap-typeahead.js"></script>
+					src="/{/Service/Context/SiteName}/bootstrap_231/js/bootstrap-typeahead.js"></script>
 
 				<!-- <xsl:value-of select="/Service/Context/SiteName" /> <xsl:copy-of 
 					select="/"/> -->
