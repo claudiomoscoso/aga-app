@@ -1,0 +1,486 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tRProductoComponente_tComponente]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRProductoComponente] DROP CONSTRAINT FK_tRProductoComponente_tComponente
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tSolicitudComponente_tComponente]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRSolicitudComponente] DROP CONSTRAINT FK_tSolicitudComponente_tComponente
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tRSolicitudMetodo_tMetodo]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRSolicitudMetodoAnalitico] DROP CONSTRAINT FK_tRSolicitudMetodo_tMetodo
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tProductoAtributo_tMetodoPreparacion1]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tProductoAtributo] DROP CONSTRAINT FK_tProductoAtributo_tMetodoPreparacion1
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tRSolicitudPatron_tPatron]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRSolicitudPatron] DROP CONSTRAINT FK_tRSolicitudPatron_tPatron
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tRProductoComponente_tProductoAtributo]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRProductoComponente] DROP CONSTRAINT FK_tRProductoComponente_tProductoAtributo
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tSolicitud_tProductoAtributo]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tSolicitud] DROP CONSTRAINT FK_tSolicitud_tProductoAtributo
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tLote_tSolicitud]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tLote] DROP CONSTRAINT FK_tLote_tSolicitud
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tSolicitudComponente_tSolicitud]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRSolicitudComponente] DROP CONSTRAINT FK_tSolicitudComponente_tSolicitud
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tRSolicitudMetodo_tSolicitud]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRSolicitudMetodoAnalitico] DROP CONSTRAINT FK_tRSolicitudMetodo_tSolicitud
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tRSolicitudPatron_tSolicitud]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tRSolicitudPatron] DROP CONSTRAINT FK_tRSolicitudPatron_tSolicitud
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tSolicitudDetalle_tSolicitud]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tSolicitudDetalle] DROP CONSTRAINT FK_tSolicitudDetalle_tSolicitud
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tSolicitudDetalle_tTipoCilindro]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tSolicitudDetalle] DROP CONSTRAINT FK_tSolicitudDetalle_tTipoCilindro
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tProductoAtributo_tTipoProducto]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tProductoAtributo] DROP CONSTRAINT FK_tProductoAtributo_tTipoProducto
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[FK_tSolicitudDetalle_tValvula]') and OBJECTPROPERTY(id, N'IsForeignKey') = 1)
+ALTER TABLE [dbo].[tSolicitudDetalle] DROP CONSTRAINT FK_tSolicitudDetalle_tValvula
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tComponente]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tComponente]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tLote]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tLote]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tMetodoAnalitico]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tMetodoAnalitico]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tMetodoPreparacion]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tMetodoPreparacion]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tPatron]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tPatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tProductoAtributo]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tProductoAtributo]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tRProductoComponente]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tRProductoComponente]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tRSolicitudComponente]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tRSolicitudComponente]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tRSolicitudMetodoAnalitico]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tRSolicitudMetodoAnalitico]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tRSolicitudPatron]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tRSolicitudPatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tSolicitud]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tSolicitudDetalle]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tSolicitudDetalle]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tTipoCilindro]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tTipoCilindro]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tTipoProducto]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tTipoProducto]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tValvula]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tValvula]
+GO
+
+CREATE TABLE [dbo].[tComponente] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cSigla] [varchar] (10) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNombre] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cAbreviacion] [varchar] (10) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tLote] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cSolicitud] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cCilindro] [varchar] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cVolumen] [varchar] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tMetodoAnalitico] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNombre] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tMetodoPreparacion] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNombre] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tPatron] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNumero] [varchar] (5) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cCompuesto] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cComposicion] [varchar] (35) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cCilindro] [varchar] (15) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cFechaExpiracion] [datetime] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tProductoAtributo] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cProducto] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cEstabilidadGarantizada] [int] NOT NULL ,
+	[cMetodoPreparacion] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cTipoProducto] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cExpiracion] [int] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tRProductoComponente] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cProducto] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cComponente] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cRelleno] [bit] NOT NULL ,
+	[cRango] [varchar] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cUnidad] [varchar] (5) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tRSolicitudComponente] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cSolicitud] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cComponente] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cRequerido] [decimal](18, 2) NULL ,
+	[cAnalisis] [decimal](18, 2) NULL ,
+	[cDesviacionRelativa] [decimal](18, 2) NULL ,
+	[cRelleno] [bit] NOT NULL ,
+	[cUnidad] [varchar] (5) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tRSolicitudMetodoAnalitico] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cSolicitud] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cMetodo] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tRSolicitudPatron] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cSolicitud] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cPatron] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tSolicitud] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cProducto] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cOrden] [varchar] (10) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cAnalisis] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cCliente] [varchar] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NULL ,
+	[cFechaCreacion] [smalldatetime] NOT NULL ,
+	[cUsuario] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cCilindroAGA] [bit] NOT NULL ,
+	[cComentario] [ntext] COLLATE SQL_Latin1_General_CP850_CI_AS NULL ,
+	[cContacto] [varchar] (100) COLLATE SQL_Latin1_General_CP850_CI_AS NULL ,
+	[cLoteAGA] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NULL 
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tSolicitudDetalle] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cSolicitud] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cTipoCilindro] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cLitros] [decimal](10, 0) NULL ,
+	[cPoLlenado] [decimal](10, 0) NULL ,
+	[cVolumenGas] [decimal](10, 0) NULL ,
+	[cValvula] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cExpiracion] [int] NOT NULL ,
+	[cTMinUso] [int] NOT NULL ,
+	[cPMinUso] [int] NOT NULL ,
+	[cToleranciaPreparacion] [int] NOT NULL ,
+	[cNivelConfianza] [int] NOT NULL ,
+	[cNumeroPatron] [varchar] (5) COLLATE SQL_Latin1_General_CP850_CI_AS NULL ,
+	[cComentario] [varchar] (100) COLLATE SQL_Latin1_General_CP850_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tTipoCilindro] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNombre] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tTipoProducto] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNombre] [varchar] (50) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cGaspuro] [bit] NOT NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[tValvula] (
+	[cID] [char] (20) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL ,
+	[cNombre] [varchar] (15) COLLATE SQL_Latin1_General_CP850_CI_AS NOT NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tComponente] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tComponente] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tLote] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tLote] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tMetodoAnalitico] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tMetodo] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tMetodoPreparacion] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tMetodoPreparacion] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tPatron] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tPatron] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tProductoAtributo] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tProductoAtributo] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tRProductoComponente] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tProducto_Componente] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tRSolicitudComponente] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tSolicitudComponente] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tRSolicitudMetodoAnalitico] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tRSolicitudMetodo] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tRSolicitudPatron] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tRSolicitudPatron] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tSolicitud] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tSolicitud] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tSolicitudDetalle] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tSolicitudDetalle] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tTipoCilindro] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tTipoCilindro] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tTipoProducto] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tTipoProducto] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE [dbo].[tValvula] WITH NOCHECK ADD 
+	CONSTRAINT [PK_tValvula] PRIMARY KEY  CLUSTERED 
+	(
+		[cID]
+	)  ON [PRIMARY] 
+GO
+
+ CREATE  UNIQUE  INDEX [IX_tProductoProducto] ON [dbo].[tProductoAtributo]([cProducto]) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tRSolicitudComponente] ADD 
+	CONSTRAINT [DF_tSolicitudComponente_cRelleno] DEFAULT (0) FOR [cRelleno]
+GO
+
+ALTER TABLE [dbo].[tSolicitud] ADD 
+	CONSTRAINT [DF_tSolicitud_cAnalisis] DEFAULT (0) FOR [cAnalisis]
+GO
+
+ALTER TABLE [dbo].[tLote] ADD 
+	CONSTRAINT [FK_tLote_tSolicitud] FOREIGN KEY 
+	(
+		[cSolicitud]
+	) REFERENCES [dbo].[tSolicitud] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tProductoAtributo] ADD 
+	CONSTRAINT [FK_tProductoAtributo_tMetodoPreparacion1] FOREIGN KEY 
+	(
+		[cMetodoPreparacion]
+	) REFERENCES [dbo].[tMetodoPreparacion] (
+		[cID]
+	),
+	CONSTRAINT [FK_tProductoAtributo_tTipoProducto] FOREIGN KEY 
+	(
+		[cTipoProducto]
+	) REFERENCES [dbo].[tTipoProducto] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tRProductoComponente] ADD 
+	CONSTRAINT [FK_tRProductoComponente_tComponente] FOREIGN KEY 
+	(
+		[cComponente]
+	) REFERENCES [dbo].[tComponente] (
+		[cID]
+	),
+	CONSTRAINT [FK_tRProductoComponente_tProductoAtributo] FOREIGN KEY 
+	(
+		[cProducto]
+	) REFERENCES [dbo].[tProductoAtributo] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tRSolicitudComponente] ADD 
+	CONSTRAINT [FK_tSolicitudComponente_tComponente] FOREIGN KEY 
+	(
+		[cComponente]
+	) REFERENCES [dbo].[tComponente] (
+		[cID]
+	),
+	CONSTRAINT [FK_tSolicitudComponente_tSolicitud] FOREIGN KEY 
+	(
+		[cSolicitud]
+	) REFERENCES [dbo].[tSolicitud] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tRSolicitudMetodoAnalitico] ADD 
+	CONSTRAINT [FK_tRSolicitudMetodo_tMetodo] FOREIGN KEY 
+	(
+		[cMetodo]
+	) REFERENCES [dbo].[tMetodoAnalitico] (
+		[cID]
+	),
+	CONSTRAINT [FK_tRSolicitudMetodo_tSolicitud] FOREIGN KEY 
+	(
+		[cSolicitud]
+	) REFERENCES [dbo].[tSolicitud] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tRSolicitudPatron] ADD 
+	CONSTRAINT [FK_tRSolicitudPatron_tPatron] FOREIGN KEY 
+	(
+		[cPatron]
+	) REFERENCES [dbo].[tPatron] (
+		[cID]
+	),
+	CONSTRAINT [FK_tRSolicitudPatron_tSolicitud] FOREIGN KEY 
+	(
+		[cSolicitud]
+	) REFERENCES [dbo].[tSolicitud] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tSolicitud] ADD 
+	CONSTRAINT [FK_tSolicitud_tProductoAtributo] FOREIGN KEY 
+	(
+		[cProducto]
+	) REFERENCES [dbo].[tProductoAtributo] (
+		[cID]
+	)
+GO
+
+ALTER TABLE [dbo].[tSolicitudDetalle] ADD 
+	CONSTRAINT [FK_tSolicitudDetalle_tSolicitud] FOREIGN KEY 
+	(
+		[cSolicitud]
+	) REFERENCES [dbo].[tSolicitud] (
+		[cID]
+	),
+	CONSTRAINT [FK_tSolicitudDetalle_tTipoCilindro] FOREIGN KEY 
+	(
+		[cTipoCilindro]
+	) REFERENCES [dbo].[tTipoCilindro] (
+		[cID]
+	),
+	CONSTRAINT [FK_tSolicitudDetalle_tValvula] FOREIGN KEY 
+	(
+		[cValvula]
+	) REFERENCES [dbo].[tValvula] (
+		[cID]
+	)
+GO
+

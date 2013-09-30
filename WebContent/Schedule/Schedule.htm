@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Horario de Atenci&oacute;n</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../public/js/prototype-1.5.1.2.js"></script>
+<script type="text/javascript" src="../public/js/BSEffect.js"></script>
+
+<script type="text/javascript">
+function toggleSelection(object){
+    //alert(object.style.class); 
+}
+
+function countCell(){
+	var tds = $$('td[class="TimeSelector"]');
+	for(var i = 0; tds.length > i; i++){
+		tds[i].observe('click', respondToClick);
+	}
+}
+
+function respondToClick(event) {
+	var element = Event.element(event);
+	fromColor = '#ffffff';  
+	toColor   = '#979b88';
+	Highlight(element, fromColor, toColor, 1000);
+	//alert(element.id);
+}
+</script>
+</head>
+<body>
+<table width="100%">
+    <tr><td>Head</td></tr>
+    <tr align="center">
+        <td align="center">
+            <table align="center" style="width:1000px; background-color:#ffffff; border:1px solid #e5eff8;">
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td style="width:10px;"></td>
+                    <td>
+                        <table id="Calendar" width="100%" >
+                            <tr>
+                                <th scope="row" style="text-align:left;">AM</th>
+                                <th>Dom</th>
+                                <th>Lun</th>
+                                <th>Mar</th>
+                                <th>Mie</th>
+                                <th>Jue</th>
+                                <th>Vie</th>
+                                <th>Sab</th>
+                            </tr>
+                            <tr>
+                            <th scope="row">7:00</th>
+                             <td id="SU0700" class="TimeSelector" ></td>                             
+                             <td id="MO0700" class="TimeSelector"></td>                             
+                             <td id="TU0700" class="TimeSelector"></td>                             
+                             <td id="WE0700" class="TimeSelector"></td>                             
+                             <td id="TH0700" class="TimeSelector"></td>                             
+                             <td id="FR0700" class="TimeSelector"></td>                             
+                             <td id="SA0700" class="TimeSelector"></td>                             
+                            </tr>
+                            <tr>
+                             <th scope="row">7:30</th>
+                             <td id="SU0730" class="TimeSelector"></td>                             
+                             <td id="MO0730" class="TimeSelector"></td>                             
+                             <td id="TU0730" class="TimeSelector"></td>                             
+                             <td id="WE0730" class="TimeSelector"></td>                             
+                             <td id="TH0730" class="TimeSelector"></td>                             
+                             <td id="FR0730" class="TimeSelector"></td>                             
+                             <td id="SA0730" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">8:00</th>
+                             <td id="SU0800" class="TimeSelector"></td>                             
+                             <td id="MO0800" class="TimeSelector"></td>                             
+                             <td id="TU0800" class="TimeSelector"></td>                             
+                             <td id="WE0800" class="TimeSelector"></td>                             
+                             <td id="TH0800" class="TimeSelector"></td>                             
+                             <td id="FR0800" class="TimeSelector"></td>                             
+                             <td id="SA0800" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">8:30</th>
+                             <td id="SU0830" class="TimeSelector"></td>                             
+                             <td id="MO0830" class="TimeSelector"></td>                             
+                             <td id="TU0830" class="TimeSelector"></td>                             
+                             <td id="WE0830" class="TimeSelector"></td>                             
+                             <td id="TH0830" class="TimeSelector"></td>                             
+                             <td id="FR0830" class="TimeSelector"></td>                             
+                             <td id="SA0830" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">9:00</th>
+                             <td id="SU0900" class="TimeSelector"></td>                             
+                             <td id="MO0900" class="TimeSelector"></td>                             
+                             <td id="TU0900" class="TimeSelector"></td>                             
+                             <td id="WE0900" class="TimeSelector"></td>                             
+                             <td id="TH0900" class="TimeSelector"></td>                             
+                             <td id="FR0900" class="TimeSelector"></td>                             
+                             <td id="SA0900" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">9:30</th>
+                             <td id="SU0930" class="TimeSelector"></td>                             
+                             <td id="MO0930" class="TimeSelector"></td>                             
+                             <td id="TU0930" class="TimeSelector"></td>                             
+                             <td id="WE0930" class="TimeSelector"></td>                             
+                             <td id="TH0930" class="TimeSelector"></td>                             
+                             <td id="FR0930" class="TimeSelector"></td>                             
+                             <td id="SA0930" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">10:00</th>
+                             <td id="SU1000" class="TimeSelector"></td>                             
+                             <td id="MO1000" class="TimeSelector"></td>                             
+                             <td id="TU1000" class="TimeSelector"></td>                             
+                             <td id="WE1000" class="TimeSelector"></td>                             
+                             <td id="TH1000" class="TimeSelector"></td>                             
+                             <td id="FR1000" class="TimeSelector"></td>                             
+                             <td id="SA1000" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">10:30</th>
+                             <td id="SU1030" class="TimeSelector"></td>                             
+                             <td id="MO1030" class="TimeSelector"></td>                             
+                             <td id="TU1030" class="TimeSelector"></td>                             
+                             <td id="WE1030" class="TimeSelector"></td>                             
+                             <td id="TH1030" class="TimeSelector"></td>                             
+                             <td id="FR1030" class="TimeSelector"></td>                             
+                             <td id="SA1030" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">11:00</th>
+                             <td id="SU1100" class="TimeSelector"></td>                             
+                             <td id="MO1100" class="TimeSelector"></td>                             
+                             <td id="TU1100" class="TimeSelector"></td>                             
+                             <td id="WE1100" class="TimeSelector"></td>                             
+                             <td id="TH1100" class="TimeSelector"></td>                             
+                             <td id="FR1100" class="TimeSelector"></td>                             
+                             <td id="SA1100" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">11:30</th>
+                             <td id="SU1130" class="TimeSelector"></td>                             
+                             <td id="MO1130" class="TimeSelector"></td>                             
+                             <td id="TU1130" class="TimeSelector"></td>                             
+                             <td id="WE1130" class="TimeSelector"></td>                             
+                             <td id="TH1130" class="TimeSelector"></td>                             
+                             <td id="FR1130" class="TimeSelector"></td>                             
+                             <td id="SA1130" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row" style="text-align:left;">PM</th>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                             <td></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">12:00</th>
+                             <td id="SU1200" class="TimeSelector"></td>                             
+                             <td id="MO1200" class="TimeSelector"></td>                             
+                             <td id="TU1200" class="TimeSelector"></td>                             
+                             <td id="WE1200" class="TimeSelector"></td>                             
+                             <td id="TH1200" class="TimeSelector"></td>                             
+                             <td id="FR1200" class="TimeSelector"></td>                             
+                             <td id="SA1200" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">12:30</th>
+                             <td id="SU1230" class="TimeSelector"></td>                             
+                             <td id="MO1230" class="TimeSelector"></td>                             
+                             <td id="TU1230" class="TimeSelector"></td>                             
+                             <td id="WE1230" class="TimeSelector"></td>                             
+                             <td id="TH1230" class="TimeSelector"></td>                             
+                             <td id="FR1230" class="TimeSelector"></td>                             
+                             <td id="SA1230" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">13:00</th>
+                             <td id="SU1300" class="TimeSelector"></td>                             
+                             <td id="MO1300" class="TimeSelector"></td>                             
+                             <td id="TU1300" class="TimeSelector"></td>                             
+                             <td id="WE1300" class="TimeSelector"></td>                             
+                             <td id="TH1300" class="TimeSelector"></td>                             
+                             <td id="FR1300" class="TimeSelector"></td>                             
+                             <td id="SA1300" class="TimeSelector"></td>
+                            </tr>
+
+                            <tr>
+                             <th scope="row">13:30</th>
+                             <td id="SU1330" class="TimeSelector"></td>                             
+                             <td id="MO1330" class="TimeSelector"></td>                             
+                             <td id="TU1330" class="TimeSelector"></td>                             
+                             <td id="WE1330" class="TimeSelector"></td>                             
+                             <td id="TH1330" class="TimeSelector"></td>                             
+                             <td id="FR1330" class="TimeSelector"></td>                             
+                             <td id="SA1330" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">14:00</th>
+                             <td id="SU1400" class="TimeSelector"></td>                             
+                             <td id="MO1400" class="TimeSelector"></td>                             
+                             <td id="TU1400" class="TimeSelector"></td>                             
+                             <td id="WE1400" class="TimeSelector"></td>                             
+                             <td id="TH1400" class="TimeSelector"></td>                             
+                             <td id="FR1400" class="TimeSelector"></td>                             
+                             <td id="SA1400" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">14:30</th>
+                             <td id="SU1430" class="TimeSelector"></td>                             
+                             <td id="MO1430" class="TimeSelector"></td>                             
+                             <td id="TU1430" class="TimeSelector"></td>                             
+                             <td id="WE1430" class="TimeSelector"></td>                             
+                             <td id="TH1430" class="TimeSelector"></td>                             
+                             <td id="FR1430" class="TimeSelector"></td>                             
+                             <td id="SA1430" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">15:00</th>
+                             <td id="SU1500" class="TimeSelector"></td>                             
+                             <td id="MO1500" class="TimeSelector"></td>                             
+                             <td id="TU1500" class="TimeSelector"></td>                             
+                             <td id="WE1500" class="TimeSelector"></td>                             
+                             <td id="TH1500" class="TimeSelector"></td>                             
+                             <td id="FR1500" class="TimeSelector"></td>                             
+                             <td id="SA1500" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">15:30</th>
+                             <td id="SU1530" class="TimeSelector"></td>                             
+                             <td id="MO1530" class="TimeSelector"></td>                             
+                             <td id="TU1530" class="TimeSelector"></td>                             
+                             <td id="WE1530" class="TimeSelector"></td>                             
+                             <td id="TH1530" class="TimeSelector"></td>                             
+                             <td id="FR1530" class="TimeSelector"></td>                             
+                             <td id="SA1530" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">16:00</th>
+                             <td id="SU1600" class="TimeSelector"></td>                             
+                             <td id="MO1600" class="TimeSelector"></td>                             
+                             <td id="TU1600" class="TimeSelector"></td>                             
+                             <td id="WE1600" class="TimeSelector"></td>                             
+                             <td id="TH1600" class="TimeSelector"></td>                             
+                             <td id="FR1600" class="TimeSelector"></td>                             
+                             <td id="SA1600" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">16:30</th>
+                             <td id="SU1630" class="TimeSelector"></td>                             
+                             <td id="MO1630" class="TimeSelector"></td>                             
+                             <td id="TU1630" class="TimeSelector"></td>                             
+                             <td id="WE1630" class="TimeSelector"></td>                             
+                             <td id="TH1630" class="TimeSelector"></td>                             
+                             <td id="FR1630" class="TimeSelector"></td>                             
+                             <td id="SA1630" class="TimeSelector"></td>
+                             <tr>
+                             <th scope="row">17:00</th>
+                             <td id="SU1700" class="TimeSelector"></td>                             
+                             <td id="MO1700" class="TimeSelector"></td>                             
+                             <td id="TU1700" class="TimeSelector"></td>                             
+                             <td id="WE1700" class="TimeSelector"></td>                             
+                             <td id="TH1700" class="TimeSelector"></td>                             
+                             <td id="FR1700" class="TimeSelector"></td>                             
+                             <td id="SA1700" class="TimeSelector"></td>
+                             <tr>
+                             <th scope="row">17:30</th>
+                             <td id="SU1730" class="TimeSelector"></td>                             
+                             <td id="MO1730" class="TimeSelector"></td>                             
+                             <td id="TU1730" class="TimeSelector"></td>                             
+                             <td id="WE1730" class="TimeSelector"></td>                             
+                             <td id="TH1730" class="TimeSelector"></td>                             
+                             <td id="FR1730" class="TimeSelector"></td>                             
+                             <td id="SA1730" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">18:00</th>
+                             <td id="SU1800" class="TimeSelector"></td>                             
+                             <td id="MO1800" class="TimeSelector"></td>                             
+                             <td id="TU1800" class="TimeSelector"></td>                             
+                             <td id="WE1800" class="TimeSelector"></td>                             
+                             <td id="TH1800" class="TimeSelector"></td>                             
+                             <td id="FR1800" class="TimeSelector"></td>                             
+                             <td id="SA1800" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">18:30</th>
+                             <td id="SU1830" class="TimeSelector"></td>                             
+                             <td id="MO1830" class="TimeSelector"></td>                             
+                             <td id="TU1830" class="TimeSelector"></td>                             
+                             <td id="WE1830" class="TimeSelector"></td>                             
+                             <td id="TH1830" class="TimeSelector"></td>                             
+                             <td id="FR1830" class="TimeSelector"></td>                             
+                             <td id="SA1830" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">19:00</th>
+                             <td id="SU1900" class="TimeSelector"></td>                             
+                             <td id="MO1900" class="TimeSelector"></td>                             
+                             <td id="TU1900" class="TimeSelector"></td>                             
+                             <td id="WE1900" class="TimeSelector"></td>                             
+                             <td id="TH1900" class="TimeSelector"></td>                             
+                             <td id="FR1900" class="TimeSelector"></td>                             
+                             <td id="SA1900" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">19:30</th>
+                             <td id="SU1930" class="TimeSelector"></td>                             
+                             <td id="MO1930" class="TimeSelector"></td>                             
+                             <td id="TU1930" class="TimeSelector"></td>                             
+                             <td id="WE1930" class="TimeSelector"></td>                             
+                             <td id="TH1930" class="TimeSelector"></td>                             
+                             <td id="FR1930" class="TimeSelector"></td>                             
+                             <td id="SA1930" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">20:00</th>
+                             <td id="SU2000" class="TimeSelector"></td>                             
+                             <td id="MO2000" class="TimeSelector"></td>                             
+                             <td id="TU2000" class="TimeSelector"></td>                             
+                             <td id="WE2000" class="TimeSelector"></td>                             
+                             <td id="TH2000" class="TimeSelector"></td>                             
+                             <td id="FR2000" class="TimeSelector"></td>                             
+                             <td id="SA2000" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">20:30</th>
+                             <td id="SU2030" class="TimeSelector"></td>                             
+                             <td id="MO2030" class="TimeSelector"></td>                             
+                             <td id="TU2030" class="TimeSelector"></td>                             
+                             <td id="WE2030" class="TimeSelector"></td>                             
+                             <td id="TH2030" class="TimeSelector"></td>                             
+                             <td id="FR2030" class="TimeSelector"></td>                             
+                             <td id="SA2030" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">21:00</th>
+                             <td id="SU2100" class="TimeSelector"></td>                             
+                             <td id="MO2100" class="TimeSelector"></td>                             
+                             <td id="TU2100" class="TimeSelector"></td>                             
+                             <td id="WE2100" class="TimeSelector"></td>                             
+                             <td id="TH2100" class="TimeSelector"></td>                             
+                             <td id="FR2100" class="TimeSelector"></td>                             
+                             <td id="SA2100" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">21:30</th>
+                             <td id="SU2130" class="TimeSelector"></td>                             
+                             <td id="MO2130" class="TimeSelector"></td>                             
+                             <td id="TU2130" class="TimeSelector"></td>                             
+                             <td id="WE2130" class="TimeSelector"></td>                             
+                             <td id="TH2130" class="TimeSelector"></td>                             
+                             <td id="FR2130" class="TimeSelector"></td>                             
+                             <td id="SA2130" class="TimeSelector"></td>
+                            </tr>
+                            <tr>
+                             <th scope="row">22:00</th>
+                             <td id="SU2200" class="TimeSelector"></td>                             
+                             <td id="MO2200" class="TimeSelector"></td>                             
+                             <td id="TU2200" class="TimeSelector"></td>                             
+                             <td id="WE2200" class="TimeSelector"></td>                             
+                             <td id="TH2200" class="TimeSelector"></td>                             
+                             <td id="FR2200" class="TimeSelector"></td>                             
+                             <td id="SA2200" class="TimeSelector"></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td style="width:10px;" ></td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;<input type="button" text="Count" name="Count" onclick="countCell();" />  </td>
+                </tr>
+            </table>
+                
+        </td>
+    </tr>
+    <tr><td>Foot</td></tr>
+</table>
+<br/>
+
+</body>
+</html>

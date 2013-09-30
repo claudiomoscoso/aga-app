@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		
+		<!--<table width="550" height="467" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td width="18" height="19" background="izq_superior.png">&nbsp;</td>
+		<td width="511" background="cen_superior.png">&nbsp;</td>
+		<td width="21" background="der_superior.png">&nbsp;</td>
+		</tr>
+		<tr>
+		<td height="429" background="izq_centro.png">&nbsp;</td>
+		<td>DATOS</td>
+		<td background="der_centro.png">&nbsp;</td>
+		</tr>
+		<tr>
+		<td background="izq_inferior.png">&nbsp;</td>
+		<td background="cen_inferior.png">&nbsp;</td>
+		<td background="der_inferior.png">&nbsp;</td>
+		</tr>
+		</table>-->
+
+		<table width="736" height="640" border="0" cellpadding="0" cellspacing="0" background="public/img/fondo_cat.png">
+			
+			<tr align="center">
+				<td>
+					<table boder="0" width="700" height="300" bgcolor="#954A00">
+						<tr align="center">
+							<td onmouseover='this.style.background="#CCCCCC"' onmouseout='this.style.background="#FFFFFF"'>
+								<xsl:for-each select="/Response/Fields/ProductTypes/row">
+						
+						<xsl:choose>
+							<xsl:when test="cIsProduct=1">
+								
+								<a class="LinkProduct"
+									href="ControlServlet?fldProduct={cID}&amp;bsServiceName=BSK.ShowProduct&amp;fldParent={/Response/Request/Fields/fldProduct}">
+									
+									<!--												<xsl:if test="cFileName!='unknow'">-->
+									<img border="0" src="{/Response/Fields/ImagePath}{cFileName}"/>
+									<!--												</xsl:if>-->
+									
+								</a>
+								
+							</xsl:when>
+							
+							<xsl:otherwise>
+								
+								<a class="LinkCategory"
+									href="ControlServlet?fldProduct={cID}&amp;bsServiceName=BSK.ShowProductType&amp;fldParent={/Response/Request/Fields/fldProduct}">
+									<xsl:if test="cFileName!='unknow'">
+										
+										<!--<xsl:value-of select="cName"/>-->
+										<img border="0" src="{/Response/Fields/ImagePath}pt{cID}/{cFileName}"/>
+										
+									</xsl:if>
+									
+								</a>
+								
+							</xsl:otherwise>
+						</xsl:choose>
+						
+						<xsl:choose>
+							<xsl:when test="(position() mod 4) = 0">
+								
+							</xsl:when>
+							<xsl:otherwise>
+							</xsl:otherwise>
+						</xsl:choose>
+						
+					</xsl:for-each>
+							</td>
+						</tr>
+					</table>		
+					<!--
+					<xsl:copy-of select="/"/>
+					-->
+					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="304" height="102" border="0" cellpadding="0" cellspacing="0">
+					  <tr>
+					  	<td width="15"></td>
+						<td>
+							<a  href="javascript:self.location.href='ControlServlet?bsServiceName=BSK.ShowProductType&amp;fldProduct={/Response/Request/Fields/fldParent}'">
+							<img onmouseover="javaScript:swapImage(this, 'public/img/btn/back_max.jpg');" 
+								onmouseout="javaScript:swapImage(this, 'public/img/btn/back_min.jpg');"
+							src="public/img/btn/back_min.jpg" name="x_next"   border="0" id="x_next" /></a></td>
+						<td><a  href="#">
+							<img onmouseover="javaScript:swapImage(this, 'public/img/btn/home_max.jpg');" 
+								onmouseout="javaScript:swapImage(this, 'public/img/btn/home_min.jpg');"
+							src="public/img/btn/home_min.jpg" name="x_next"   border="0" id="x_next" /></a></td>
+						<td><a  href="#">
+							<img onmouseover="javaScript:swapImage(this, 'public/img/btn/next_max.jpg');" 
+								onmouseout="javaScript:swapImage(this, 'public/img/btn/next_min.jpg');"
+								
+							src="public/img/btn/next_min.jpg" name="x_next"   border="0" id="x_next" /></a></td>
+					  </tr>
+					</table>
+				
+				
+<!--				<input type="button" value="Atras"
+					onclick="self.location.href='ControlServlet?bsServiceName=BSK.ShowProductType&amp;fldProduct={/Response/Request/Fields/fldParent}'"/>
+-->
+				</td>
+			</tr>	
+		</table>
+		<!--
+		<xsl:copy-of select="/"/>
+			-->
+			
+		<script language="JavaScript1.1" type="text/javascript">
+			<xsl:comment> 
+			
+				function swapImage(oImg, newImage){
+ 
+					 oImg.src = newImage;
+				}
+			/*
+				function MM_swapImgRestore() { //v3.0
+				  var i,x,a=document.MM_sr; for(i=0;a&amp;&amp;i&lt;a.length&amp;&amp;(x=a[i])&amp;&amp;x.oSrc;i++) x.src=x.oSrc;
+				}
+				
+				function MM_preloadImages() { //v3.0
+				  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+					var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i&lt;a.length; i++)
+					if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+				}
+				
+				function MM_findObj(n, d) { //v4.01
+				  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))&gt;0&amp;&amp;parent.frames.length) { 
+					d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+				  if(!(x=d[n])  &amp;&amp;  d.all) x=d.all[n]; for (i=0;!x&amp;&amp;i&lt;d.forms.length;i++) x=d.forms[i][n];
+				  for(i=0;!x&amp;&amp;d.layers&amp;&amp;i&lt;d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+				  if(!x &amp;&amp; d.getElementById) x=d.getElementById(n); return x;
+				}
+				
+				function MM_swapImage() { //v3.0
+				  var i,j=0,x,a=MM_swapImage.arguments; 
+				  document.MM_sr=new Array; 
+				  for(i=0;i&lt;(a.length-2);i+=3)
+				   if ((x=MM_findObj(a[i]))!=null){
+				   document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];
+				   }
+				}
+				*/
+			//</xsl:comment>
+		</script>
+	</xsl:template>
+</xsl:stylesheet>

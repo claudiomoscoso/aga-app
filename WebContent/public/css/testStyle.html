@@ -1,0 +1,103 @@
+<html>
+  <head>
+ 
+    <LINK rel="stylesheet" type="text/css" href="style.css">
+<!-- 
+    <LINK rel="stylesheet" type="text/css" href="default.css">
+  -->
+    <title></title>
+    
+    <script src="../js/framework.js">&nbsp;</script>
+    
+    <script >
+		//ta.className
+		
+		
+    </script>
+  </head>
+  
+  <body onload="javaScript:loadFormat()">
+  onload="javaScript:loadFormat()"<br>
+  &lt;LINK rel="stylesheet" type="text/css" href="default.css"&gt;
+  
+    <h1 class='cTitle'>Titulo</h1><h2 class='cTitle2'>Subtitulo</h2>
+		<span class="cMessage">Advertencia, cualquier copia no autorizada no esta permitido</span>
+    <br><br>
+   
+    <table>
+		<caption>Solicitud de datos</caption>
+		<tr>
+			<td>
+				<span class=cLabel>Nombre Cliente:(class=cLabel)</span>
+				<span class=cInfo>Jose Inostrosa(class=cInfo)</span> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class=cLabel>Direccion:</span>
+				<span><input type="text" value="sin class"></span> 
+			</td>
+			<td>
+				<span class=cLabel>Edad:</span>
+				<span><input name=x id=x type="text" onkeypress="onlyInteger()"></span> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class=cLabel>Antecedente:</span>
+				<span><input type="text"></span> 
+			</td>
+			<td>
+				<span class=cLabel>Giro:</span>
+				<input type="text"> 
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<span class=cLabel>Estatus:</span>
+				<select>
+					<option>Habilitado</option>
+					<option>Desabilitado</option>
+					<option>Suspendido</option>
+				</select>
+			</td>
+		</tr>
+    </table>
+    
+    
+    <table class="cList" cellpadding=0 cellspacing=0>
+		<tr>
+			<td class="cHeadTD">Codigo</td>
+			<td class="cHeadTD">Detalle</td>
+			<td class="cHeadTD">Valor</td>
+		</tr>
+		<tr>
+			<td class="cDataTD">Y2726</td>
+			<td class="cDataTD">Sales minerales</td>
+			<td class="cDataTD">376,272</td>
+		</tr>
+		<tr>
+			<td class="cDataTD">H3736</td>
+			<td class="cDataTD">Sal</td>
+			<td class="cDataTD">3,200</td>
+		</tr>
+		<tr>
+			<td class="cDataTD">R6352</td>
+			<td class="cDataTD">Quimicos</td>
+			<td class="cDataTD">3076,000</td>
+		</tr>
+    </table>
+    
+    &lt;table class="cList" cellpadding=0 cellspacing=0&gt;<br>
+		&lt;tr&gt;<br>
+			&lt;td class="cHeadTD"&gt;Codigo&lt;/td&gt;<br>
+
+	<span class="cLabel">Observacion</span>
+	<textarea onfocus="alert('in TextArea')" onblur="alert('out TextArea')" name=ta id=ta> </textarea>
+    <center>
+    <input type="Button" value="Aceptar" id=button1 name=button1>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" value="Cancelar" id=button2 name=button2>
+    </center>
+  </body>
+</html>

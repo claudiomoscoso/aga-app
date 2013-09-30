@@ -1,0 +1,49 @@
+body {
+	background-color:#113322;
+	margin:0px 0px 7px;
+}
+Table 
+{
+	border:1px solid #e5eff8;
+	margin:1em auto;
+	border-collapse:collapse;
+}
+
+#Calendar Table 
+{
+	border:1px solid #e5eff8;
+	margin:1em auto;
+	border-collapse:collapse;
+}
+#Calendar Td {
+	color:#678197;
+	border:1px solid #e5eff8;
+	border-left:1px solid #e5eff8;
+	padding:.3em 1em;
+	text-align:center;
+	height:10px;
+	width:80px;
+	cursor:pointer;
+}
+#Calendar Th
+{
+	background:#f4f9fe url(img/background.gif) no-repeat;
+	font-family: "Verdana";
+	font-size: 0.8em;
+	color:#ff5809;
+	height:10px;
+	width:50px;
+}
+#Calendar Tr
+{
+	height:10px;
+}
+.TimeSelector
+{
+	width:120px;
+	height:10px;
+	cursor:pointer;
+	border:0px;	
+	border: solid 1px;
+	border-color: #678197;
+}

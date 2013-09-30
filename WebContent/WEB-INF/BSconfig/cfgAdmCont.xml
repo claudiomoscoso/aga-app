@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<Fonts>
+		<Font>Arial</Font>
+		<Font>Courier New</Font>
+		<Font>Tahoma</Font>
+		<Font>Times New Roman</Font>
+		<Font>Verdana</Font>
+	</Fonts>
+
+	<Services>
+
+		<Service ID="ACO.ListPages">
+			<Process ID="ListPages" xNextService="BSF.ShowService" />
+			<Template ID="ListPages.xsl" />
+		</Service>
+
+		<Service ID="ACO.EditPage">
+			<Process ID="GetPage" xNextService="BSF.ShowService" />
+			<Process ID="GetFonts" />
+			<Template ID="EditPage.xsl" />
+		</Service>
+
+		<Service ID="ACO.NewFile">
+			<Template ID="NewFile.xsl" />
+		</Service>
+
+		<Service ID="ACO.SavePage">
+			<If Condition="/Service/Request/Fields/fldNewPage=1" True="ACO.SaveNewPage" False="ACO.UpdatePage" />
+		</Service>
+
+		<Service ID="ACO.SaveNewPage">
+			<Process ID="SavePage" NextService="ACO.ListPages" />
+		</Service>
+		<Service ID="ACO.UpdatePage">
+			<Process ID="UpdatePage" NextService="ACO.ListPages" />
+		</Service>
+
+		<Service ID="ACO.NewPage">
+			<Template ID="EditPage.xsl" NextService="BSF.ShowService" />
+		</Service>
+
+		<Service ID="ACO.Page">
+			<Process ID="GetPage" />
+			<Template ID="ShowPage.xsl" UseContainer="0" />
+		</Service>
+
+		<Service ID="ACO.SaveFile">
+			<Process ID="SaveFile" NextService="ACO.ListPages" />
+		</Service>
+
+		<Service ID="ACO.EditFile">
+			<Process ID="GetFile" xNextService="BSF.ShowService" />
+			<Template ID="EditFile.xsl" />
+		</Service>
+
+		<Service ID="ACO.UpdateFile">
+			<Process ID="UpdateFile" NextService="ACO.ListPages" />
+		</Service>
+
+		<Service ID="ACO.DeleteContent">
+			<Process ID="DeleteContent" NextService="ACO.ListPages" />
+		</Service>
+		<Service ID="ACO.DeleteFile">
+			<Process ID="DeleteFile" NextService="ACO.ListPages" />
+		</Service>
+	</Services>
+
+	<Classes>
+		<Class ID="ListPages" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="GetPage" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="UpdatePage" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="SavePage" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="SaveFile" Name="cl.builderSoft.product.content.SaveFile" />
+		<Class ID="GetFile" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="UpdateFile" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="DeleteContent" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		<Class ID="DeleteFile" Name="cl.builderSoft.product.content.DeleteFile" />
+		<Class ID="GetFonts" Name="cl.builderSoft.product.content.GetFonts" />
+	</Classes>
+
+</Module>
