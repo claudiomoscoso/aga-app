@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:template match="/">
-	<br/><br/><br/>
-	<div class="cLabel">
-		Archivo se esta procesando para ser incorporado en los datos del flujo...</div><br/><br/><br/>
-		<a href="?bsServiceName=AF.Files">Continuar</a>
-	</xsl:template>
-</xsl:stylesheet>
