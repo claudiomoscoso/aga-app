@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<SCRIPT type="text/javascript">
+	function getHttpClient(){
+		var xmlHttp = null;
+		try {
+			// Firefox, Opera 8.0+, Safari
+			xmlHttp = new XMLHttpRequest();
+		} catch (e) {
+		// Internet Explorer
+			try {
+				xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+			} catch (e) {
+				try {
+					xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {
+					alert("Your browser does not support AJAX!");
+				}
+			}
+		}
+		return xmlHttp;
+	}
+
+	function getAjax(){
+		var xmlHttp = getHttpClient();
+
+		xmlHttp.open("GET","GetSchedule.xml", true);
+		xmlHttp.send(null);
+
+		xmlHttp.onreadystatechange=function() {
+			if(xmlHttp.readyState==4) {
+//alert(xmlHttp.responseText);
+//				divResponse.innerHTML = xmlHttp.responseText;
+				try{
+					var dom = xmlHttp.responseXML;
+					divResponse.innerHTML = get_firstchild(dom).getElementsByTagName("*")[0].tagName;
+				}catch(e){
+					alert(e);
+				}
+			}
+		}
+	}
+function get_firstchild(n)
+{
+x=n.firstChild;
+while (x.nodeType!=1)
+  {
+  x=x.nextSibling;
+  }
+return x;
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<INPUT type="button" onClick="getAjax()" value="Test">
+
+<FONT face="Courier New">
+<DIV id="divResponse"></DIV>
+</FONT>
+
+</BODY>
+</HTML>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataBase>
+	<Debuging>1</Debuging><!--
+	<MinPoolSize>1</MinPoolSize>
+	<MaxPoolSize>2</MaxPoolSize>
+							  -->
+	<DataSource ID="MED">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://localhost/medics</URL>
+		<Login>root</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="XSR">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://localhost/users</URL>
+		<Login>root</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="USR">
+		<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+		<URL>jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=Users;</URL>
+		<Login>sa</Login>
+		<Password>12870668</Password>
+		<Provider>SQLServer</Provider>
+		<Active>1</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	
+	<DataSource ID="LOG">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://localhost/users_dbo</URL>
+		<Login>root</Login>
+		<Password>12870668</Password>
+		<Provider>MySQL</Provider>
+		<Active>1</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+
+	
+		<!--
+	<DataSource ID="LOG">
+		<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+		<URL>jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=Users;</URL>
+		<Login>sa</Login>
+		<Password>12870668</Password>
+		<Provider>SQLServer</Provider>
+		<Active>1</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+-->
+			<DataSource ID="TST">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://localhost/test</URL>
+		<Login>root</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="XOG">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://localhost/log</URL>
+		<Login>root</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="XDP">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://localhost/sdp</URL>
+		<Login>root</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="MDL">
+		<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+		<URL>jdbc:odbc:Modelo</URL>
+		<Login>sa</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="CTM">
+		<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+		<URL>jdbc:odbc:AGACustomer</URL>
+		<Login>sa</Login>
+		<Password/>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="SDP">
+		<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+		<URL>jdbc:microsoft:sqlserver://wxp-book:1433;DatabaseName=SDP_4test;SelectMethod=cursor</URL>
+		<Login>sa</Login>
+		<Password>12870668</Password>
+		<Provider>SQLServer</Provider>
+		<Active>1</Active>
+		<PoolSize>1</PoolSize>
+	</DataSource>
+	<DataSource ID="SDP">
+		<Driver>com.mysql.jdbc.Driver</Driver>
+		<URL>jdbc:mysql://wxp-book/sdp_dev_dbo</URL>
+		<Login>root</Login>
+		<Password>12870668</Password>
+		<Provider>SQLServer</Provider>
+		<Active>0</Active>
+		<PoolSize>10</PoolSize>
+	</DataSource>
+	<Providers>
+		<Provider ID="SQLServer">
+			<Class>cl.builderSoft.framework.database.impl2.ExecutorSQLServerImpl</Class>
+		</Provider>
+		<Provider ID="MySQL">
+			<Class>cl.builderSoft.framework.database.impl2.ExecutorMySQLImpl</Class>
+		</Provider>
+	</Providers>
+</DataBase>

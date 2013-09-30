@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+        <display-name>aga-app</display-name>
+        <!-- 
+        <listener>
+                <listener-class>cl.builderSoft.listener.CtxListener</listener-class>
+        </listener>
+  -->
+        <servlet>
+                <description></description>
+                <display-name>PdfServlet</display-name>
+                <servlet-name>PdfServlet</servlet-name>
+                <servlet-class>cl.builderSoft.utilpdf.PdfServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>PdfServlet</servlet-name>
+                <url-pattern>/PdfServlet</url-pattern>
+        </servlet-mapping>
+        <servlet>
+                <description></description>
+                <display-name>PdfServletGas</display-name>
+                <servlet-name>PdfServletGas</servlet-name>
+                <servlet-class>cl.builderSoft.utilpdf.PdfServletGas</servlet-class>
+        </servlet>
+        <servlet-mapping>
+                <servlet-name>PdfServletGas</servlet-name>
+                <url-pattern>/PdfServletGas</url-pattern>
+        </servlet-mapping>
+
+
+        
+        <servlet>
+                <description></description>
+                <display-name>ControlServlet</display-name>
+                <servlet-name>ControlServlet</servlet-name>
+                <servlet-class>cl.builderSoft.framework.mvc.servlet.ControlServlet</servlet-class>
+        </servlet>
+       
+        <!--
+                <servlet> <description>TestConnection</description> <display-name>TestConnection</display-name>
+                <servlet-name>TestConnection</servlet-name> <servlet-class>cl.builderSoft.framework.TestConnection</servlet-class> </servlet>
+
+                <servlet> <description></description> <display-name>TestAJAX</display-name> <servlet-name>TestAJAX</servlet-name>
+                <servlet-class>cl.builderSoft.framework.test.TestAJAX</servlet-class> </servlet>
+        -->
+        <servlet>
+                <description>
+                </description>
+                <display-name>ServerProperty</display-name>
+                <servlet-name>ServerProperty</servlet-name>
+                <servlet-class>cl.builderSoft.framework.mvc.servlet.ServerProperty</servlet-class>
+        </servlet>
+        <servlet>
+                <description>
+                </description>
+                <display-name>bsas</display-name>
+                <servlet-name>bsas</servlet-name>
+                <servlet-class>cl.builderSoft.framework.mvc.servlet.BSAjaxServlet</servlet-class>
+        </servlet>
+        <servlet>
+                <display-name>Redirect</display-name>
+                <servlet-name>Redirect</servlet-name>
+                <servlet-class>cl.builderSoft.Redirect</servlet-class>
+
+                <init-param>
+                        <description>Context a redirigir</description>
+                        <param-name>url</param-name>
+                        <param-value>http://www.emol.com</param-value>
+                </init-param>
+        </servlet>
+        <servlet>
+        	<description>
+        	</description>
+        	<display-name>StartupServlet</display-name>
+        	<servlet-name>StartupServlet</servlet-name>
+        	<servlet-class>cl.builderSoft.framework.mvc.servlet.StartupServlet</servlet-class>
+        	<load-on-startup>1</load-on-startup>
+        </servlet>
+
+        <servlet-mapping>
+                <servlet-name>ControlServlet</servlet-name>
+                <url-pattern>/ControlServlet</url-pattern>
+        </servlet-mapping>
+    
+        <!-- 
+        <servlet-mapping>
+                <servlet-name>TestConnection</servlet-name>
+                <url-pattern>/TestConnection</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+                <servlet-name>TestAJAX</servlet-name>
+                <url-pattern>/TestAJAX</url-pattern>
+        </servlet-mapping>
+         -->
+        <servlet-mapping>
+                <servlet-name>Redirect</servlet-name>
+                <url-pattern>/Redirect</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+                <servlet-name>ServerProperty</servlet-name>
+                <url-pattern>/ServerProperty</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+                <servlet-name>bsas</servlet-name>
+                <url-pattern>/bsas</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+        	<servlet-name>StartupServlet</servlet-name>
+        	<url-pattern>/StartupServlet</url-pattern>
+        </servlet-mapping>
+
+        <welcome-file-list>
+                <welcome-file>ControlServlet</welcome-file>
+        </welcome-file-list>
+
+        <!-- 
+        <error-page>
+                <error-code>404</error-code>
+                <location>/ControlServlet</location>
+        </error-page>
+ -->
+
+        <session-config>
+                <session-timeout>10</session-timeout>
+        </session-config>
+
+</web-app>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<EnableModule>1</EnableModule>
+	<SystemAdministratorRol>00000000000000000000</SystemAdministratorRol>
+
+	<Fields>
+<!-- 
+		<Field ID="prpGrupoScout">Grupo Scout</Field>
+ -->
+		<Field ID="prpSucursal">Sucursal</Field>
+ 	</Fields>
+  
+	<Services>
+		<Service ID="USR.validLogin">
+			<Process ID="ValidUser" LogMessage="El usuario se valido con exito" />
+			<If Condition="/Service/Session/User/@Logon != ''" True="BSF.body" False="BSF.error" />
+			<Template ID="mainFrame.xsl" UseContainer="1" />
+		</Service>
+
+		<Service ID="USR.MakeMainFrame">
+			<Template ID="mainFrame.xsl" UseContainer="1" />
+		</Service>
+
+		<Service ID="USR.listUser">
+			<Process ID="ListUser" />
+			<Template ID="listUser.xsl" UseContainer="1" />
+		</Service>
+		<Service ID="USR.newUserForm">
+			<Process ID="GetRolEmpresa" />
+			<Process ID="GetFields" />
+			<Template ID="newUserForm.xsl" />
+		</Service>
+
+		<Service ID="USR.saveNewUser">
+			<Process ID="CreateNewUser" LogMessage="El usuario @; creo al usuario @;" NextService="USR.listUser" />
+			<Template ID="operacionExitosa.xsl" />
+		</Service>
+		<Service ID="USR.confirmDeleteUser">
+			<Process ID="SearchUser" />
+			<Template ID="confirmaBorradoUser.xsl" />
+		</Service>
+		<Service ID="USR.deleteUser">
+			<Process ID="DeleteUser" LogMessage="El usuario @; elimin@oacute; al usuario cuyo ID es @;"
+				NextService="USR.listUser" />
+			<Template ID="operacionExitosa.xsl">
+				<Script src="public/js/USR/operacionExitosa.js" />
+			</Template>
+		</Service>
+		<Service ID="USR.editUser">
+			<Process ID="GetRolEmpresa" />
+			<Process ID="SearchUser" />
+			<Process ID="GetFields" />
+			<Template ID="editUser.xsl" UseContainer="1" />
+		</Service>
+		<Service ID="USR.updateUser">
+			<Process ID="UpdateUser" LogMessage="El usuario @; modific@oacute; los datos del usuario cuyo ID es @;"
+				NextService="USR.listUser" />
+			<Template ID="operacionExitosa.xsl">
+				<Script src="public/js/USR/operacionExitosa.js" />
+			</Template>
+		</Service>
+		<Service ID="USR.ListRol">
+			<Process ID="ListRol" />
+			<Template ID="ListRol.xsl" />
+		</Service>
+		<Service ID="USR.newRol">
+			<Template ID="newRolForm.xsl" />
+		</Service>
+		<Service ID="USR.saveNewRol">
+			<Process ID="CreateNewRol" LogMessage="El usuario @; creo el rol @;" NextService="USR.ListRol" />
+			<Template ID="operacionExitosa.xsl">
+				<Script src="public/js/USR/operacionExitosa.js" />
+			</Template>
+		</Service>
+		<Service ID="USR.confirmDeleteRol">
+			<Process ID="SearchRol" />
+			<Template ID="confirmaBorradoRol.xsl" />
+		</Service>
+		<Service ID="USR.deleteRol">
+			<Process ID="DeleteRol" LogMessage="El usuario @; elimino el rol cuyo id es @;" NextService="USR.ListRol" />
+			<Template ID="operacionExitosa.xsl">
+				<Script src="public/js/USR/operacionExitosa.js" />
+			</Template>
+		</Service>
+		<Service ID="USR.editRol">
+			<Process ID="SearchRol" />
+			<Template ID="editRol.xsl" />
+		</Service>
+		<Service ID="USR.updateRol">
+			<Process ID="UpdateRol" LogMessage="El usuario @; modifico el nombre del Rol cuyo ID es @;" NextService="USR.ListRol" />
+			<Template ID="operacionExitosa.xsl">
+				<Script src="public/js/USR/operacionExitosa.js" />
+			</Template>
+		</Service>
+		<Service ID="USR.permiso">
+	<!-- 	 
+			<Process ID="GetRolEmpresa" />
+			-->
+			<Process ID="ListRol"/>
+			<Process ID="GetMenu" />
+			<Template ID="permiso/showPermiso.xsl" />
+		</Service>
+		<Service ID="USR.savePermiso">
+			<Process ID="SavePermission" LogMessage="El usuario @; modifico los permisos del Rol @;" NextService="USR.permiso" />
+			<Template ID="operacionExitosa.xsl" />
+		</Service>
+		<Service ID="USR.prepareCambioClave">
+			<Process ID="SearchUser" />
+			<Template ID="changePassword.xsl"/>
+		</Service>
+		<Service ID="USR.cambioClave">
+			<Process ID="ChangePassword" LogMessage="Cambio la password del usuario @;" />
+			<If Condition="/Service/Request/Fields/fldID != /Service/Session/User/cID" True="USR.listUser" False="BSF.body" />
+		</Service>
+
+		<Service ID="USR.readActivity">
+			<Process ID="SearchUser" />
+			<Process ID="ViewActivity" />
+			<Template ID="showActivity.xsl" />
+		</Service>
+
+	</Services>
+	<Classes>
+		<Class ID="ValidUser" Name="cl.builderSoft.framework.user.service.ValidUser" />
+		<Class ID="ByPass" Name="cl.builderSoft.framework.service.ByPass" />
+		<Class ID="GetMenu" Name="cl.builderSoft.framework.user.service.GetMenu" />
+		<Class ID="ListUser" Name="cl.builderSoft.framework.user.service.ListUser" />
+		
+		<Class ID="GetRolEmpresa" Name="cl.builderSoft.framework.user.service.GetRolEmpresa" />
+		
+		<Class ID="CreateNewUser" Name="cl.builderSoft.framework.user.service.CreateNewUser" />
+		<Class ID="SearchUser" Name="cl.builderSoft.framework.user.service.SearchUser" />
+		<Class ID="DeleteUser" Name="cl.builderSoft.framework.user.service.DeleteUser" />
+		<Class ID="UpdateUser" Name="cl.builderSoft.framework.user.service.UpdateUser" />
+		<Class ID="ListRol" Name="cl.builderSoft.framework.user.service.ListRol" />
+		<Class ID="CreateNewRol" Name="cl.builderSoft.framework.user.service.CreateNewRol" />
+		<Class ID="SearchRol" Name="cl.builderSoft.framework.user.service.SearchRol" />
+		<Class ID="DeleteRol" Name="cl.builderSoft.framework.user.service.DeleteRol" />
+		<Class ID="UpdateRol" Name="cl.builderSoft.framework.user.service.UpdateRol" />
+		<Class ID="GetRolEmpresa" Name="cl.builderSoft.framework.user.service.GetRolEmpresa" />
+		<Class ID="SavePermission" Name="cl.builderSoft.framework.user.service.SavePermission" />
+		<Class ID="ChangePassword" Name="cl.builderSoft.framework.user.service.ChangePassword" />
+		<Class ID="ViewActivity" Name="cl.builderSoft.framework.user.service.ViewActivity" />
+		<Class ID="PrintSession" Name="cl.builderSoft.framework.user.service.PrintSession" />
+		<Class ID="GetFields" Name="cl.builderSoft.framework.user.service.GetFields" />
+	</Classes>
+</Module>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<Services>
+		<Service ID="ABO.cliente">
+			<Template ID="ListaCliente.xsl" />
+		</Service>
+		<Service ID="ABO.letrado">
+			<Template ID="ListaLetrado.xsl" />
+		</Service>
+		<Service ID="ABO.causa">
+			<Template ID="ListaCausa.xsl" />
+		</Service>
+		<Service ID="ABO.unacausa">
+			<Template ID="Causa.xsl" />
+		</Service>
+
+	</Services>
+
+	<Classes>
+		<!-- 
+			<Class ID="GetEstadoCivil" Name="cl.builderSoft.framework.service.GenericSingleQuery" />
+		-->
+	</Classes>
+
+</Module>

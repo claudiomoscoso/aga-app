@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<DataEngine>SQL</DataEngine>
+	<Debuging>1</Debuging>
+	<Product>
+		<Framework Alias="BSF">
+			<ConfigFile>cfgBSFramework.xml</ConfigFile>
+			<ErrorControl>
+				<FieldErrorSeparator>NT</FieldErrorSeparator>
+				<LongMessage>1</LongMessage>
+				<ConsoleOut>1</ConsoleOut>
+				<FileOut>
+					<Active>1</Active>
+					<FilePathLog>Log</FilePathLog>
+				</FileOut>
+			</ErrorControl>
+
+			<DefaultService>BSF.root</DefaultService>
+			<LogoffService>BSF.logoff</LogoffService>
+		</Framework>
+		<Users Alias="USR">
+			<ConfigFile>cfgUsers.xml</ConfigFile>
+		</Users>
+		<Medics Alias="MDC">
+			<ConfigFile>cfgMedics.xml</ConfigFile>
+		</Medics>
+		<Medics Alias="EMU">
+			<ConfigFile>cfgEmulator.xml</ConfigFile>
+		</Medics>
+		<SDP Alias="SDP">
+			<ConfigFile>cfgSDP.xml</ConfigFile>
+		</SDP>
+		<Modelo Alias="MDL">
+			<ConfigFile>cfgModelo.xml</ConfigFile>
+		</Modelo>
+		<Modelo Alias="CTM">
+			<ConfigFile>cfgCustomer.xml</ConfigFile>
+		</Modelo>
+	</Product>
+	<DataBase>
+		<Debuging>1</Debuging>
+		<!--		
+			<DataSource ID="USR">
+			<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+			<URL>jdbc:microsoft:sqlserver://10.30.0.12:1433;DatabaseName=Users;</URL>
+			<Login>sa</Login>
+			<Password>sa</Password>
+			</DataSource>		
+			<DataSource ID="LOG">
+			<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+			<URL>jdbc:microsoft:sqlserver://10.30.0.12:1433;DatabaseName=Users;</URL>
+			<Login>sa</Login>
+			<Password>sa</Password>
+			</DataSource>	
+			<DataSource ID="SDP">
+			<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+			<URL>jdbc:microsoft:sqlserver://10.30.0.12:1433;DatabaseName=SDP;SelectMethod=cursor</URL>
+			<Login>sa</Login>
+			<Password>sa</Password>
+			</DataSource>
+		-->
+
+		<DataSource ID="USR">
+			<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+			<URL>jdbc:microsoft:sqlserver://wxp-book:1433;DatabaseName=Users;</URL>
+			<Login>sa</Login>
+			<Password>12870668</Password>
+		</DataSource>
+		<DataSource ID="LOG">
+			<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+			<URL>jdbc:microsoft:sqlserver://wxp-book:1433;DatabaseName=Users;</URL>
+			<Login>sa</Login>
+			<Password>12870668</Password>
+		</DataSource>
+		<DataSource ID="SDP">
+			<Driver>com.microsoft.jdbc.sqlserver.SQLServerDriver</Driver>
+			<URL>jdbc:microsoft:sqlserver://wxp-book:1433;DatabaseName=SDP;SelectMethod=cursor</URL>
+			<Login>sa</Login>
+			<Password>12870668</Password>
+		</DataSource>
+
+		<!--
+			
+			<DataSource ID="USR">
+			<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+			<URL>jdbc:odbc:Users</URL>
+			<Login>sa</Login>
+			<Password></Password>
+			</DataSource>		
+			<DataSource ID="LOG">
+			<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+			<URL>jdbc:odbc:Users</URL>
+			<Login>sa</Login>
+			<Password></Password>
+			</DataSource>
+			<DataSource ID="SDP">
+			<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+			<URL>jdbc:odbc:SDP</URL>
+			<Login>sa</Login>
+			<Password></Password>
+			</DataSource>
+		-->
+
+
+		<!--
+			<DataSource ID="MED">
+			<Driver>com.mysql.jdbc.Driver</Driver>
+			<URL>jdbc:mysql://localhost/medics</URL>
+			<Login>root</Login>
+			<Password/>
+			</DataSource>
+			<DataSource ID="XSR">
+			<Driver>com.mysql.jdbc.Driver</Driver>
+			<URL>jdbc:mysql://localhost/users</URL>
+			<Login>root</Login>
+			<Password/>
+			</DataSource>
+			<DataSource ID="USR">
+			<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+			<URL>jdbc:odbc:Users</URL>
+			<Login>sa</Login>
+			<Password/>
+			</DataSource>		
+			
+			<DataSource ID="TST">
+			<Driver>com.mysql.jdbc.Driver</Driver>
+			<URL>jdbc:mysql://localhost/test</URL>
+			<Login>root</Login>
+			<Password/>
+			</DataSource>
+			<DataSource ID="XOG">
+			<Driver>com.mysql.jdbc.Driver</Driver>
+			<URL>jdbc:mysql://localhost/log</URL>
+			<Login>root</Login>
+			<Password/>
+			</DataSource>
+			<DataSource ID="XDP">
+			<Driver>com.mysql.jdbc.Driver</Driver>
+			<URL>jdbc:mysql://localhost/sdp</URL>
+			<Login>root</Login>
+			<Password/>
+			</DataSource>
+			
+			<DataSource ID="MDL">
+			<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+			<URL>jdbc:odbc:Modelo</URL>
+			<Login>sa</Login>
+			<Password/>
+			</DataSource>
+			
+			<DataSource ID="CTM">
+			<Driver>sun.jdbc.odbc.JdbcOdbcDriver</Driver>
+			<URL>jdbc:odbc:AGACustomer</URL>
+			<Login>sa</Login>
+			<Password/>
+			</DataSource>
+		-->
+
+	</DataBase>
+	<Menu>
+		<Option ID="02" Label="SRP">
+			<Option ID="0201" Label="Archivos" icon="file" url="ControlServlet?bsServiceName=SDP-archivo" />
+			<Option ID="0202" Label="Factores/Polinomios" icon="factor" url="ControlServlet?bsServiceName=SDP-factoresIndex" />
+			<Option ID="0203" Label="Contratos" icon="notes" url="ControlServlet?bsServiceName=SDP-ContratoIndex" />
+			<Option ID="0206" Label="Procesos" icon="inform" url="ControlServlet?bsServiceName=SDP-Process" />
+			<Option ID="0204" Label="Aprobacion de precios" icon="aprueba"
+				url="ControlServlet?bsServiceName=SDP-listCustomerWithFactors" />
+			<Option ID="0205" Label="Carta Tipo" icon="product" url="ControlServlet?bsServiceName=SDP-LetterDefinition" />
+			<Option ID="0206" Label="Reportes" icon="notes" url="ControlServlet?bsServiceName=SDP-Report" />
+		</Option>
+
+		<Option ID="01" Label="Administracion">
+			<Option ID="0101" Label="Usuarios" icon="user" url="ControlServlet?bsServiceName=USR.listUser" />
+			<Option ID="0102" Label="Grupo" icon="group" url="ControlServlet?bsServiceName=USR.ListRol" />
+			<Option ID="0103" Label="Permiso de Grupos" icon="keys" url="ControlServlet?bsServiceName=USR.permiso" />
+			<Option ID="0104" Label="Cambio de Clave" icon="seguridad" url="ControlServlet?bsServiceName=USR.prepareCambioClave" />
+		</Option>
+		<!--
+			<Option ID="03" Label="Modelo">
+			<Option ID="0301" Label="Archivos" icon="user"
+			url="ControlServlet?bsServiceName=MDL-files"/>
+			</Option>
+		-->
+		<Option ID="04" Label="Clientes">
+			<Option ID="0401" Label="Contacto" icon="user" url="ControlServlet?bsServiceName=CTM-contacto" />
+			<Option ID="0402" Label="Cotizacion" icon="notes" url="ControlServlet?bsServiceName=CTM-contacto" />
+			<Option ID="0403" Label="Producto" icon="aprueba" url="ControlServlet?bsServiceName=CTM-contacto" />
+			<Option ID="0404" Label="Informes" icon="inform" url="ControlServlet?bsServiceName=CTM-contacto" />
+		</Option>
+
+	</Menu>
+</Config>
