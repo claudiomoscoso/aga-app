@@ -19,8 +19,7 @@ public class AccionesPaciente {
 
 		Connection conn = Conexion.obtenerConexion();
 
-		PreparedStatement statement = conn
-				.prepareStatement("select nombre,apellido,fecha_nacimiento from paciente where rut=?");
+		PreparedStatement statement = conn.prepareStatement("select nombre,apellido,fecha_nacimiento from paciente where rut=?");
 		statement.setString(1, rut);
 		ResultSet rs = statement.executeQuery();
 
@@ -47,29 +46,29 @@ public class AccionesPaciente {
 		return consulta;
 	}
 
-	public List<Consulta> obtenerConsultas(int cantidad, Paciente p)
-			throws Exception {
+	public List<Consulta> obtenerConsultas(int cantidad, Paciente p) throws Exception {
 		Connection conn = Conexion.obtenerConexion();
 
-		PreparedStatement statement = conn
-				.prepareStatement("select fecha,paciente,medico,diagnostico,tratamiento,observaciones,tipo,examenes from consulta where rut=? ");
+		PreparedStatement statement = conn.prepareStatement("select codigo, rut_medico, fecha_consulta, diagnostico, "
+				+ "tratamiento, tipo_consulta from consultas_medicas where rut_paciente=? ");
 		statement.setString(1, p.getRut());
 		ResultSet rs = statement.executeQuery();
 		List<Consulta> lista = new ArrayList<Consulta>();
 
 		while (rs.next()) {
-			Consulta consu = new Consulta();
-			consu.setFecha(rs.getDate("fecha"));
-			consu.setDiagnostico(rs.getString("diagnostico"));
-			Medico m = buscarMedico(rs.getString("medico"), conn);
-			consu.setMedico(m);
-			consu.setTratamiento(rs.getString("tratamiento"));
-			consu.setObservaciones(rs.getString("Observaciones"));
-			TipoConsulta tc = obtenerTipoConsulta(rs.getString("tipoConsulta"));
-			consu.setTipoConsulta(tc);
+			Consulta consulta = new Consulta();
+			consulta.setCodigo(rs.getInt("codigo"));
+			consulta.setFecha(rs.getDate("fecha_consulta"));
+			consulta.setDiagnostico(rs.getString("diagnostico"));
+			Medico m = buscarMedico(rs.getString("rut_medico"), conn);
+			consulta.setMedico(m);
+			consulta.setTratamiento(rs.getString("tratamiento"));
+//			consulta.setObservaciones(rs.getString("Observaciones"));
+			TipoConsulta tc = obtenerTipoConsulta(rs.getString("tipo_consulta"));
+			consulta.setTipoConsulta(tc);
 			// consu.setExamenes(rs.getList("Examenes"));
 
-			lista.add(consu);
+			lista.add(consulta);
 		}
 		Conexion.cerrarTodo(rs, statement, conn);
 		return lista;
@@ -78,8 +77,7 @@ public class AccionesPaciente {
 	private Medico buscarMedico(String rut, Connection conn) throws Exception {
 		Medico m = null;
 
-		PreparedStatement statement = conn
-				.prepareStatement("select nombre,apellido,fechaNacimiento from paciente where rut=? ");
+		PreparedStatement statement = conn.prepareStatement("select nombre,apellido,especialidad from medico where rut=? ");
 		statement.setString(1, rut);
 		ResultSet rs = statement.executeQuery();
 
@@ -89,8 +87,8 @@ public class AccionesPaciente {
 			m = new Medico();
 			m.setNombre(rs.getString("nombre"));
 			m.setApellido(rs.getString("apellido"));
-			m.setRut(rs.getString("rut"));
-			m.setEspecialidad(rs.getString("Especialidad"));
+			m.setRut(rut);
+			m.setEspecialidad(rs.getString("especialidad"));
 		} else {
 			System.out.println("No se encontraron datos");
 		}

@@ -18,10 +18,11 @@ public class PacienteObtenerConsultasTest {
 	}
 
 	@Test
-	public void testObtenerConsultas() throws Exception {
+	public void testObtenerConsultas1() throws Exception {
 		AccionesPaciente ap = new AccionesPaciente();
 
-		Paciente p = null;
+		Paciente p = new Paciente();
+		p.setRut("XXX");
 		
 		List<Consulta> consultas = ap.obtenerConsultas(1, p);
 
@@ -29,4 +30,16 @@ public class PacienteObtenerConsultasTest {
 
 	}
 
+	@Test
+	public void testObtenerConsultas2() throws Exception {
+		AccionesPaciente ap = new AccionesPaciente();
+
+		Paciente p = new Paciente();
+		p.setRut("1-7");
+		
+		List<Consulta> consultas = ap.obtenerConsultas(1, p);
+
+		assertTrue(consultas != null);
+
+	}
 }
