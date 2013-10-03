@@ -21,9 +21,9 @@ import clinica.beans.Usuario;
  *
  * @author Sebastian Lopez
  */
-public class LoginUsuarioTest {
+public class UsuarioLoginTest {
 
-    public LoginUsuarioTest() {
+    public UsuarioLoginTest() {
     }
 
     @BeforeClass
