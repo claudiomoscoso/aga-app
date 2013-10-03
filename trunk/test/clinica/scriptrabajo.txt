@@ -1,0 +1,47 @@
+use Clinica;
+
+drop table if exists Usuario;
+drop table if exists Paciente;
+drop table if exists Medico;
+drop table if exists Detalle_consulta;
+drop table if exists Examen;
+
+create table Usuario(
+rut varchar(10) primary key,
+password varchar(32),
+tipo varchar(1)
+);
+
+create table Paciente(
+rut  varchar(10) primary key,
+nombre varchar(20),
+apellido varchar(20),
+fecha_nacimiento date
+);
+
+create table Medico(
+rut varchar(9) primary key,
+nombre varchar(20),
+apellido varchar(20),
+especialidad varchar(30)
+);
+
+create table Detalle_consulta(
+codigo_consulta integer,
+codigo_examen   integer,
+solicitado char(1),
+primary key (codigo_consulta,codigo_examen)
+);
+
+create table Examen(
+codigo integer primary key,
+nombre varchar(30),
+tipo_examen char(1)
+);
+
+insert into usuario (rut, password, tipo) values ('1-9', '123', 'M');
+insert into medico  (rut, nombre, apellido, especialidad) values ('1-9', 'Juan','Perez', 'Traumatologo');
+insert into usuario (rut,password,tipo) values ('1-7','123','P');
+insert into paciente (rut,nombre,apellido,fecha_nacimiento) values('1-7','Cristian','Gomez','1989-07-24');
+
+insert into usuario (rut,password,tipo) values ('1-6','123','P');
