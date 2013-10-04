@@ -7,20 +7,26 @@ import java.sql.Statement;
 
 public class Conexion {
 
-    public static Connection obtenerConexion() throws Exception {
-        String bd = "jdbc:odbc:seba";
+	public static Connection obtenerConexion() throws Exception {
+		String bd = "jdbc:odbc:seba";
 
-        Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
-        Connection con = null;
+		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+		Connection con = null;
 
-        con = DriverManager.getConnection(bd);
+		con = DriverManager.getConnection(bd);
 
-        return con;
-    }
+		return con;
+	}
 
-    public static void cerrarTodo(ResultSet rs, Statement stm, Connection conn) throws Exception {
-        rs.close();
-        stm.close();
-        conn.close();
-    }
+	public static void cerrarTodo(ResultSet rs, Statement stm, Connection conn) throws Exception {
+		if (rs != null) {
+			rs.close();
+		}
+		if (stm != null) {
+			stm.close();
+		}
+		if (conn != null) {
+			conn.close();
+		}
+	}
 }
