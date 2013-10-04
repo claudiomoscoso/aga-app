@@ -50,7 +50,7 @@ public class AccionesPaciente {
 		Connection conn = Conexion.obtenerConexion();
 
 		PreparedStatement statement = conn.prepareStatement("select codigo, rut_medico, fecha_consulta, diagnostico, "
-				+ "tratamiento, tipo_consulta from consultas_medicas where rut_paciente=? ");
+				+ "tratamiento, tipo_consulta from consultas_medicas where rut_paciente=? order by fecha_consulta desc");
 		statement.setString(1, p.getRut());
 		ResultSet rs = statement.executeQuery();
 		List<Consulta> lista = new ArrayList<Consulta>();

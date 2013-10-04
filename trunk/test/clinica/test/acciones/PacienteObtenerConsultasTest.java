@@ -42,4 +42,16 @@ public class PacienteObtenerConsultasTest {
 		assertTrue(consultas != null);
 
 	}
+	@Test
+	public void testObtenerConsultas3() throws Exception {
+		AccionesPaciente ap = new AccionesPaciente();
+
+		Paciente p = new Paciente();
+		p.setRut("1-7");
+		
+		List<Consulta> consultas = ap.obtenerConsultas(1, p);
+
+		assertTrue(consultas.get(1).getTratamiento().equals("reposo relativo"));
+
+	}
 }

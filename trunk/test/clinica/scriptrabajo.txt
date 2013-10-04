@@ -53,6 +53,9 @@ create table consultas_medicas(
 insert into consultas_medicas ( rut_paciente, rut_medico, fecha_consulta, diagnostico, tratamiento, tipo_consulta) 
 					values ('1-7', '1-9', '2013-10-01', 'el diagnostico es que el enfermo esta resfriado', 
 					'reposo relativo', 'C');
+insert into consultas_medicas ( rut_paciente, rut_medico, fecha_consulta, diagnostico, tratamiento, tipo_consulta) 
+					values ('1-7', '1-9', '2013-10-02', 'el diagnostico es que el enfermo esta resfriado', 
+					'reposo extricto', 'C');
 
 insert into usuario (rut, password, tipo) values ('1-9', '123', 'M');
 insert into medico  (rut, nombre, apellido, especialidad) values ('1-9', 'Juan','Perez', 'Traumatologo');
