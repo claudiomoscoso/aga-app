@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Before;
@@ -15,6 +14,7 @@ import clinica.acciones.AccionesConsulta;
 import clinica.acciones.AccionesPaciente;
 import clinica.beans.Consulta;
 import clinica.beans.Examen;
+import clinica.beans.Medico;
 import clinica.beans.Paciente;
 import clinica.beans.TipoConsulta;
 import clinica.util.Conexion;
@@ -30,13 +30,15 @@ public class ConsultaConfirmarTest {
 		AccionesConsulta ac = new AccionesConsulta();
 		Consulta c = new Consulta();
 		Paciente p = new Paciente();
+		Medico m = new Medico();
 
 		p.setRut("1-7");
+		m.setRut("1-9");
 
 		c.setDiagnostico("resfrio");
 		c.setExamenes(getExamenes());
-		c.setFecha(new Date());
-		c.setMedico(null);
+		c.setFecha(new java.sql.Date(System.currentTimeMillis()));
+		c.setMedico(m);
 		c.setPaciente(p);
 		c.setTipoConsulta(TipoConsulta.ConsultaMedica);
 		c.setTratamiento("antigripal");
