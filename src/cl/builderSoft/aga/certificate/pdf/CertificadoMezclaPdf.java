@@ -29,8 +29,8 @@ public class CertificadoMezclaPdf extends PdfDocument {
 
  
 	public void addElements(List list) throws Exception {
-		
-        Image image = new Image("aga_iso.GIF");
+        Image image = new Image("SGS.png");
+//        Image image = new Image("aga_iso.GIF");
         image.setPosition(0, 0);
         image.setSize(120, 72);
 		
