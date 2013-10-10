@@ -102,7 +102,8 @@ public class CertificadoGasPdf extends PdfDocument {
 	}
 
 	private void putImagen(List list) {
-		Image image = new Image("aga_iso.GIF");
+//		Image image = new Image("aga_iso.GIF");
+		Image image = new Image("SGS.png");
 		image.setPosition(0, 0);
 		image.setSize(120, 72);
 
