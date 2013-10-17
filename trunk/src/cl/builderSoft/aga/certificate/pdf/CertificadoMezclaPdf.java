@@ -287,7 +287,7 @@ public class CertificadoMezclaPdf extends PdfDocument {
         String lines[] = {
         		"Vicente  Reyes 722-Maipú           Teléfono  +56-2 531 2455           CL-PRO 0010 E", 
         		"Casilla 164953, Stgo 9             FAX      +56-2 531 1447                         ", 
-        		"SANTIAGO, Chile                    Atención Clientes: 800 800 242                  " 
+        		"SANTIAGO, Chile                    Atención Clientes: 800 800 242 - 800 800 112    " 
         		};
         Signature signature = new Signature(lines);
         signature.setWidth(70);
