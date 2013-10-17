@@ -1,0 +1,2002 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[RESET_TABLES]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[RESET_TABLES]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pAddLote]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pAddLote]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pAddPatronSolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pAddPatronSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pAddRProductoComponente]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pAddRProductoComponente]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pCreateSolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pCreateSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pDelLote]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pDelLote]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pDelPatronSolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pDelPatronSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pDeleteComponent]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pDeleteComponent]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pDeletePatron]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pDeletePatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetAnalisisComponent]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetAnalisisComponent]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetCliente]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetCliente]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetComponentesSolicitudPdf]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetComponentesSolicitudPdf]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetMetodosSolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetMetodosSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetPatron]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetPatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetPatronByNumero]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetPatronByNumero]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetProductoByCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetProductoByCode]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetProductoById]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetProductoById]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetProductoBySolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetProductoBySolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetProductoFFOO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetProductoFFOO]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetSolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetSolicitudes]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetSolicitudes]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pGetValvula]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pGetValvula]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pInsertPatron]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pInsertPatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListComponentByProduct]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListComponentByProduct]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListComponentBySolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListComponentBySolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListComponents]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListComponents]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListLote]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListLote]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListLoteFO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListLoteFO]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListMetodo]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListMetodo]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListMetodoPreparacion]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListMetodoPreparacion]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListPatron]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListPatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListPatronOfSolicitud]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListPatronOfSolicitud]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListTipoCilindro]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListTipoCilindro]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListTipoProducto]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListTipoProducto]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pListValvula]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pListValvula]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pLoadCilindros]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pLoadCilindros]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pMetodoPreparacion]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pMetodoPreparacion]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pRelacionaProductoComponenteByProducto]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pRelacionaProductoComponenteByProducto]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pSaveAnalisisComponent]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pSaveAnalisisComponent]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pSaveNewComponent]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pSaveNewComponent]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdate2Patron]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdate2Patron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateAnalisis]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateAnalisis]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateComentario]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateComentario]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateContacto]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateContacto]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateEstabilidadGarantizada]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateEstabilidadGarantizada]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateExpiracion]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateExpiracion]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateExpiracionProd]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateExpiracionProd]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateLitros]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateLitros]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateMetodo]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateMetodo]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateMetodoPreparacionPrd]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateMetodoPreparacionPrd]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateNivelConfianza]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateNivelConfianza]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateNumeroPatron]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateNumeroPatron]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateOrden]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateOrden]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdatePMinUso]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdatePMinUso]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdatePoLlenado]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdatePoLlenado]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateTMinUso]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateTMinUso]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateTipoCilindro]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateTipoCilindro]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateTipoProductoPrd]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateTipoProductoPrd]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateToleranciaPreparacion]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateToleranciaPreparacion]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pUpdateValvula]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pUpdateValvula]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[pValidateAnalisis]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[pValidateAnalisis]
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc RESET_TABLES
+AS
+
+delete from tSolicitudDetalle;
+delete from tLote;
+delete from tRSolicitudComponente;
+delete from tRSolicitudMetodo;
+delete from tSolicitud;
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create  proc pAddLote
+@id char(20),
+@solicitud char(20),
+@cilindro varchar(20),
+@volumen varchar(20)
+AS
+
+INSERT INTO tLote(cID, cSolicitud, cCilindro, cVolumen)
+VALUES(@id, @solicitud, @cilindro, @volumen);
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pAddPatronSolicitud
+@id		char(20),
+@solicitud	char(20),
+@patron 	char(20)
+AS
+
+INSERT	INTO tRSolicitudPatron(cID, cSolicitud, cPatron)
+VALUES	(@id, @solicitud, @patron);
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE proc pAddRProductoComponente
+@id		char(20),
+@producto	char(20),
+@componente 	char(20),
+@relleno	bit,
+@rango		char(20),
+@unidad		char(5)
+AS
+
+INSERT	INTO tRProductoComponente
+	(cID, cProducto, cComponente, cRelleno, cRango, cUnidad)
+VALUES	(@id, @producto, @componente, @relleno, @rango, @unidad);
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE proc pCreateSolicitud
+@id CHAR(20),
+@producto CHAR(10),
+@usuario CHAR(20),
+@cilindroAga BIT
+AS
+
+DECLARE @tipoCilindro char(20);
+DECLARE @valvula char(20);
+DECLARE @error_insert1 INT;
+DECLARE @error_insert2 INT;
+DECLARE @error_insert3 INT;
+DECLARE @id_random char(20);
+DECLARE @metodoPreparacion char(20);
+DECLARE @id_producto char(20);
+DECLARE @expiracion INT;
+
+BEGIN TRAN T1;
+
+SET @tipoCilindro = (SELECT TOP 1 cID FROM tTipoCilindro ORDER BY cID);
+SET @valvula = (SELECT TOP 1 cID FROM tValvula ORDER BY cID);
+SET @id_producto = (SELECT cID FROM tProductoAtributo WHERE cProducto = @producto)
+SET @expiracion = (SELECT cExpiracion FROM tProductoAtributo WHERE cProducto = @producto)
+
+IF NOT EXISTS(SELECT cID FROM tProductoAtributo WHERE cProducto = @producto)
+BEGIN
+	RAISERROR ('PRODUCTO NO SE ENCUENTRA', 16, 1);
+	ROLLBACK TRAN T1;
+--	SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+--	SET @metodoPreparacion = (SELECT TOP 1 cID FROM tMetodoPreparacion);
+--	INSERT INTO tProductoAtributo(cID, cProducto, cEstabilidadGarantizada, cMetodoPreparacion)
+--	VALUES(@id_random, @producto, 12, @metodoPreparacion);
+END 
+
+INSERT INTO tSolicitud(cID, cProducto, cUsuario, cCilindroAGA, cFechaCreacion, cOrden,  cCliente)
+VALUES(@id, @id_producto, @usuario, @cilindroAga, GETDATE(), '', '');
+
+SET @error_insert1 = @@error;
+
+INSERT INTO tSolicitudDetalle(cID, cSolicitud, cTipoCilindro, cLitros, cPoLlenado, 
+	cExpiracion, cTMinUso, cPMinUso, cValvula, cToleranciaPreparacion, cNivelConfianza, cNumeroPatron)
+VALUES(@id, @id, @tipoCilindro, 0, 0, @expiracion, 0, 3, @valvula, 10, 95, '');
+
+SET @error_insert2 = @@error;
+
+-- pCreateSolicitud '00000000000000000003', 'GE100961', '00000000000000000000', 1
+
+DECLARE @componente char(20), 
+	@rango varchar(20), 
+	@relleno bit,
+	@unidad varchar(5)
+
+DECLARE RProductoComponente_cursor CURSOR FOR 
+	SELECT cComponente, cRango, cRelleno, cUnidad
+	FROM tRProductoComponente
+	WHERE cProducto = @id_producto
+
+OPEN RProductoComponente_cursor
+
+FETCH NEXT FROM RProductoComponente_cursor 
+INTO @componente, @rango, @relleno, @unidad
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+
+	WHILE (EXISTS(SELECT cID FROM tRSolicitudComponente WHERE cID = @id_random))
+	BEGIN
+		print('Existio ' + @id_random)
+		SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+	END
+
+	INSERT INTO tRSolicitudComponente(cID, cSolicitud, cComponente, cRequerido, cAnalisis, cDesviacionRelativa, cRelleno, cUnidad)
+	VALUES(@id_random, @id, @componente, 0, 0, 0, @relleno, @unidad);
+
+	SET @error_insert3 = @@error;
+
+	FETCH NEXT FROM RProductoComponente_cursor 
+	INTO @componente, @rango, @relleno, @unidad
+END
+
+CLOSE RProductoComponente_cursor
+DEALLOCATE RProductoComponente_cursor
+
+-- print @error_insert1 + @error_insert2 + @error_insert3
+
+IF(@error_insert1 + @error_insert2 + @error_insert3 <> 0)
+BEGIN
+	print 'DO ROLLBACK'
+	ROLLBACK TRAN T1
+END
+ELSE
+BEGIN
+	print 'DO COMMIT'
+	COMMIT TRAN T1
+END
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create  proc pDelLote
+@id char(20)
+AS
+
+DELETE FROM tLote 
+WHERE cID=@id;
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE  proc pDelPatronSolicitud
+@solicitud	char(20),
+@patron 	char(20)
+AS
+
+DELETE 
+FROM	tRSolicitudPatron
+WHERE	cSolicitud = @solicitud AND cPatron = @patron;
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pDeleteComponent
+@id char(20)
+AS
+
+DELETE
+FROM	tRProductoComponente
+WHERE	cID = @id;
+
+
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pDeletePatron
+@id			varchar(20)
+AS
+
+DELETE
+FROM  tPatron
+WHERE cID = @id;
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pGetAnalisisComponent
+@id	char(20)
+AS
+
+SELECT r.cSolicitud, r.cComponente, r.cRequerido, r.cAnalisis, r.cDesviacionRelativa, 
+	r.cRelleno, r.cUnidad, c.cNombre, c.cSigla
+FROM tRSolicitudComponente AS r
+LEFT JOIN tComponente AS c ON r.cComponente = c.cID
+WHERE r.cID = @id;
+
+--go
+--select * from tComponente 
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pGetCliente
+@rut char(20),
+@id char(20)
+AS
+
+SET NOCOUNT ON
+IF (@rut = 'SS')
+BEGIN
+	UPDATE tSolicitud 
+	SET cCliente = @rut
+	WHERE cID = @id
+	
+	SELECT '' AS cID, '' AS cNombre, '' AS cContacto, 1 AS cExiste
+	
+END
+ELSE
+BEGIN
+	IF( (SELECT count(cID) FROM tCliente WHERE cID = @rut) > 0)
+	BEGIN
+		UPDATE tSolicitud 
+		SET cCliente = @rut
+		WHERE cID = @id
+	
+		SELECT c.cID, c.cNombre, 
+			(SELECT TOP 1 cContacto 
+			FROM tSolicitud 
+			WHERE cCliente = @rut AND NOT cContacto IS NULL
+			ORDER BY cFechaCreacion DESC) AS cContacto,
+			1 AS cExiste
+		FROM tSolicitud AS s
+		LEFT JOIN tCliente AS c ON s.cCliente = c.cID
+		WHERE s.cID = @id;
+	
+	
+	-- Al parecer no grba el dato del contacto 
+		UPDATE tSolicitud SET cContacto = (SELECT TOP 1 cContacto 
+			FROM tSolicitud 
+			WHERE cCliente = @rut AND NOT cContacto IS NULL
+			ORDER BY cFechaCreacion DESC)
+		WHERE cID = @id;
+	
+	END 
+	ELSE 
+	BEGIN
+		SELECT c.cID, c.cNombre, 
+			(SELECT TOP 1 cContacto 
+			FROM tSolicitud 
+			WHERE cCliente = s.cCliente AND NOT cContacto IS NULL
+			ORDER BY cFechaCreacion DESC) AS cContacto,
+			0 AS cExiste
+		FROM tSolicitud AS s
+		LEFT JOIN tCliente AS c ON s.cCliente = c.cID
+		WHERE s.cID = @id;
+	END
+END
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE procedure pGetComponentesSolicitudPdf
+@id	char(20)
+AS
+
+SELECT *
+FROM tRSolicitudComponente as sc, 
+tComponente as c
+where sc.cComponente = c.cID and sc.cSolicitud = @id
+ORDER BY cRelleno
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE procedure pGetMetodosSolicitud
+@id	char(20)
+AS
+
+SELECT	m.cNombre
+FROM	tRSolicitudMetodoAnalitico sm, tMetodoAnalitico m 
+WHERE	sm.cMetodo = m.cID and
+	sm.cSolicitud = @id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pGetPatron
+@id			varchar(20)
+AS
+
+SELECT cID, cNumero, cCompuesto, cComposicion, cCilindro, cFechaExpiracion
+FROM  tPatron
+WHERE cID = @id;
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE proc pGetPatronByNumero
+@numero			varchar(5)
+AS
+
+SELECT cID, cNumero, cCompuesto, cComposicion, cCilindro, cFechaExpiracion
+FROM  tPatron
+WHERE cNumero = @numero;
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE procedure pGetProductoByCode
+@producto	varchar(10)
+AS
+
+SELECT	pa.cID AS cIDInterno, p.cID, p.cNombre, p.cCertificado, p.cUsaLote, pa.cTipoProducto, tp.cNombre AS cNombreTipoProducto,
+	pa.cEstabilidadGarantizada, pa.cMetodoPreparacion, pa.cExpiracion
+FROM	tProductoAtributo AS pa
+LEFT JOIN tProducto AS p ON pa.cProducto = p.cID
+LEFT JOIN tTipoProducto AS tp ON pa.cTipoProducto = tp.cID
+WHERE	pa.cProducto = @producto
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE procedure pGetProductoById
+@id	varchar(20)
+AS
+
+SELECT	p.cID, p.cNombre, ISNULL(p.cCertificado,'') AS cCertificado, p.cUsaLote, pa.cTipoProducto, tp.cNombre AS cNombreTipoProducto
+FROM	tProductoAtributo AS pa
+LEFT JOIN tProducto AS p ON pa.cProducto = p.cID
+LEFT JOIN tTipoProducto AS tp ON pa.cTipoProducto = tp.cID
+WHERE	pa.cID = @id
+
+-- select * from tTipoProducto
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pGetProductoBySolicitud
+@solicitud char(20)
+as
+
+select * from tRSolicitudComponente where cSolicitud = @solicitud
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pGetProductoFFOO
+@producto char(10)
+AS
+SELECT	p.cID, p.cNombre, p.cCertificado, p.cUsaLote
+FROM	tProducto AS p
+WHERE	p.cID = @producto
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE procedure pGetSolicitud
+@id	char(20)
+AS
+
+SELECT s.cID, s.cProducto, s.cFechaCreacion, s.cOrden, 
+	s.cAnalisis, ISNULL(foc.cNombre, '') AS cNombreCliente, tc.cNombre AS cNombreTipoCilindro, 
+	u.cName, pa.cTipoProducto, sd.cLitros, ISNULL(s.cContacto, '') AS cContacto, s.cCliente,
+	sd.cTipoCilindro, sd.cPoLlenado, sd.cValvula, sd.cExpiracion, sd.cTMinUso,
+	sd.cPMinUso, tp.cNombre as nombreTProducto, 
+	ISNULL(sd.cNivelConfianza, 0) as cNivelConfianza, ISNULL(sd.cToleranciaPreparacion, 0) as cToleranciaPreparacion,
+	pa.cEstabilidadGarantizada, pr.cNombre as nombreProducto, u.cName as nombreResponsable,
+	((sd.cLitros * sd.cPoLlenado) / 1000) as volumenGas,
+	tp.cGaspuro, mp.cNombre AS cMetodoPreparacion, v.cNombre AS cNombreValvula, (SELECT TOP 1 cCilindro FROM tLote WHERE cSolicitud = @id) AS cLoteAGA, ISNULL(sd.cComentario, '') AS cComentario,
+	pa.cProducto AS cCodigoProducto, pr.cCertificado AS cCertificado
+FROM tSolicitud 		AS s
+LEFT JOIN tCliente 		foc ON s.cCliente = foc.cID
+LEFT JOIN tSolicitudDetalle 	sd ON s.cID = sd.cSolicitud
+LEFT JOIN tTipoCilindro 	tc ON sd.cTipoCilindro = tc.cID
+LEFT JOIN bsframework..tUser 	u ON s.cUsuario = u.cID
+LEFT JOIN tProductoAtributo 	pa ON s.cProducto = pa.cID
+LEFT JOIN tTipoProducto 	tp ON pa.cTipoProducto = tp.cID
+LEFT JOIN tProducto 		pr ON pa.cProducto = pr.cID
+LEFT JOIN tMetodoPreparacion 	mp ON pa.cMetodoPreparacion = mp.cID
+LEFT JOIN tValvula 		v ON sd.cValvula = v.cID
+--LEFT JOIN tLote			l ON s.cID = l.cSolicitud
+WHERE s.cID = @id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE procedure pGetSolicitudes
+AS
+
+SELECT s.cID, pa.cProducto, 
+s.cFechaCreacion, s.cOrden, 
+s.cAnalisis, ISNULL(foc.cNombre,'') AS cNombreCliente, 
+tc.cNombre AS cNombreTipoCilindro, u.cName, tp.cNombre
+FROM tSolicitud s
+LEFT JOIN tCliente foc ON s.cCliente = foc.cID
+LEFT JOIN tSolicitudDetalle sd ON s.cID = sd.cSolicitud
+LEFT JOIN tTipoCilindro tc ON sd.cTipoCilindro = tc.cID
+LEFT JOIN tProductoAtributo pa ON s.cProducto = pa.cID
+LEFT JOIN tTipoProducto tp ON pa.cTipoProducto = tp.cID
+--LEFT JOIN tEstado e ON s.cEstado = e.cID
+LEFT JOIN bsframework..tUser u ON s.cUsuario = u.cID
+ORDER BY cFechaCreacion
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pGetValvula
+@id char(20)
+AS
+SELECT cID, cNombre
+FROM tValvula
+WHERE cID = @id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pInsertPatron
+@id			char(20),
+@numero			varchar(5),
+@compuesto		varchar(50),
+@composicion		varchar(35),
+@cilindro		varchar(15),
+@fechaExpiracion	datetime
+AS
+
+INSERT INTO tPatron(cID, cNumero, cCompuesto, cComposicion, cCilindro, cFechaExpiracion)
+VALUES(@id, @numero, @compuesto, @composicion, @cilindro, @fechaExpiracion)
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE proc pListComponentByProduct
+@producto varchar(10) 
+AS
+
+--select * from tRProductoComponente
+
+SELECT	r.cID, r.cProducto, r.cComponente, r.cRelleno, --p.cNombre AS cDescripcionProducto, 
+	c.cSigla, c.cNombre AS cDescripcionComponente, c.cAbreviacion, r.cUnidad, r.cRango
+FROM tRProductoComponente	AS r
+LEFT JOIN tProductoAtributo	AS pa ON pa.cID = r.cProducto
+--LEFT JOIN tProducto		AS p ON r.cProducto = p.cID
+LEFT JOIN tComponente		AS c ON r.cComponente = c.cID
+WHERE pa.cProducto = @producto
+--WHERE r.cProducto = @producto
+ORDER BY r.cRelleno
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pListComponentBySolicitud
+@solicitud varchar(20) 
+AS
+/*
+SELECT r.cID, r.cComponente, c.cSigla, r.cRelleno, r.cRequerido, r.cAnalisis, 
+	r.cUnidad,
+	r.cDesviacionRelativa, r.cRelleno, c.cNombre, '--->' as raya,
+	pc.*
+FROM tRSolicitudComponente	AS r
+LEFT JOIN tComponente		AS c ON r.cComponente = c.cID
+LEFT JOIN tSolicitud		AS s ON s.cID = @solicitud
+LEFT JOIN tRProductoComponente	AS pc ON c.cID = pc.cComponente
+WHERE r.cSolicitud = @solicitud
+*/
+
+SELECT r.cID, r.cComponente, c.cSigla, r.cRelleno, r.cRequerido, r.cAnalisis, 
+	r.cUnidad,
+	r.cDesviacionRelativa, r.cRelleno, c.cNombre, ISNULL(pc.cRango, '') AS cRango
+FROM tRSolicitudComponente	AS r
+LEFT JOIN tComponente		AS c ON c.cID = r.cComponente
+LEFT JOIN tSolicitud		AS s ON s.cID = r.cSolicitud
+LEFT JOIN tRProductoComponente	AS pc ON s.cProducto = pc.cProducto AND c.cID = pc.cComponente
+WHERE r.cSolicitud = @solicitud
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pListComponents
+AS
+
+SELECT	cID, cSigla, cNombre, cAbreviacion
+FROM	tComponente
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pListLote
+@id char(20)
+AS
+SELECT cID, cCilindro, cVolumen 
+FROM tLote
+WHERE cSolicitud = @id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pListLoteFO
+@producto char(10),
+@sucursal char(5)
+AS
+
+SELECT	cID, cNumeroLote, cFecha, cProducto, cSucursal, cPais, 
+	CASE
+		WHEN cSucursal = @sucursal THEN 0
+		ELSE 1
+	END AS cOrden
+FROM		tLoteFO 
+WHERE		cProducto = @producto
+ORDER BY	cOrden, cSucursal, cFecha DESC
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pListMetodo
+@id	char(20)
+AS
+
+SELECT m.cID, m.cNombre, 
+  CASE 
+         WHEN sm.cSolicitud IS NULL THEN 0
+         ELSE 1
+      END AS cSelected
+FROM tMetodoAnalitico AS m
+LEFT JOIN tRSolicitudMetodoAnalitico AS sm ON m.cID = sm.cMetodo
+AND cSolicitud = @id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pListMetodoPreparacion
+AS
+
+SELECT cID, cNombre 
+FROM tMetodoPreparacion
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE proc pListPatron
+AS
+
+SELECT	cID, cNumero, cCompuesto, cComposicion, cCilindro, cFechaExpiracion
+FROM	tPatron
+WHERE	cFechaExpiracion >= getdate()
+ORDER BY cCompuesto
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pListPatronOfSolicitud
+@id CHAR(20)
+AS
+
+
+SELECT	p.cID, p.cNumero, p.cCompuesto, p.cComposicion, p.cCilindro, p.cFechaExpiracion
+FROM	tRSolicitudPatron AS r
+LEFT JOIN tPatron AS p ON r.cPatron = p.cID
+WHERE	r.cSolicitud = @id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pListTipoCilindro
+AS 
+SELECT cID, cNombre
+FROM tTipoCilindro
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE proc pListTipoProducto
+AS
+SELECT cID, cNombre
+FROM tTipoProducto
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE proc pListValvula
+AS
+SELECT cID, cNombre
+FROM tValvula
+ORDER BY cNombre
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pLoadCilindros
+@lote		varchar(50),
+@solicitud	char(20)
+AS
+DECLARE @id_random char(20);
+DECLARE @error_insert INT;
+DECLARE @cilindro char(20);
+DECLARE	@volumen varchar(20);
+
+SET NOCOUNT ON;
+
+DELETE
+FROM	tLote 
+WHERE	cSolicitud = @solicitud;
+
+BEGIN TRAN
+DECLARE tCilindro_cursor CURSOR FOR 
+	SELECT	cCilindro, cVolumen
+	FROM	tCilindro
+	WHERE	cLote = @lote;
+
+OPEN tCilindro_cursor
+
+FETCH NEXT FROM tCilindro_cursor 
+INTO @cilindro, @volumen
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+
+	WHILE (EXISTS(SELECT cID FROM tLote WHERE cID = @id_random))
+	BEGIN
+		SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+	END
+
+	INSERT INTO tLote(cID, cSolicitud, cCilindro, cVolumen)
+	VALUES(@id_random, @solicitud, @cilindro, @volumen);
+
+	SET @error_insert = @@error;
+
+	FETCH NEXT FROM tCilindro_cursor 
+	INTO @cilindro, @volumen
+END;
+
+
+UPDATE	tSolicitud 
+SET	cLoteAGA = @lote
+WHERE	cID=@solicitud
+
+IF(@error_insert <> 0)
+BEGIN
+	ROLLBACK TRAN T1
+END ELSE BEGIN
+	COMMIT TRAN T1
+END;
+
+SELECT	cID, cSolicitud, cCilindro, cVolumen
+FROM	tLote 
+WHERE	cSolicitud = @solicitud;
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE  proc pMetodoPreparacion
+@id char(20)
+AS
+
+SELECT * 
+FROM tMetodoPreparacion
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE proc pRelacionaProductoComponenteByProducto
+@id		char(20),
+@producto	char(10),
+@componente	char(20),
+@relleno	bit,
+@rango		varchar(20),
+@unidad		varchar(5)
+AS
+
+DECLARE	@productoid AS CHAR(20);
+
+SET @productoid = (SELECT TOP 1 cID FROM tProductoAtributo WHERE cProducto = @producto)
+
+print '' + @id + ',' + @producto + ',' + @componente + ', ?,' + @rango + ',' + @unidad;
+
+BEGIN TRAN T1
+INSERT	tRProductoComponente(
+	cID, 
+	cProducto, 
+	cComponente, 
+	cRelleno, 
+	cRango, 
+	cUnidad) 
+VALUES(	@id, 
+	@productoid,
+	@componente, 
+	@relleno, 
+	@rango, 
+	@unidad);
+COMMIT TRAN T1
+
+
+-- pRelacionaProductoComponenteByProducto '00000000000000000221', 'GE101173', '00000000000000000046', '1', 'N/A', '%';
+
+
+--delete from tRProductoComponente
+
+-- select * from tRProductoComponente where cid='00000000000000000221'
+-- select * from tProductoAtributo
+-- sp_help tProductoAtributo
+/*
+INSERT	tRProductoComponente (
+	cID, 
+	cProducto, 
+	cComponente, 
+	cRelleno, 
+	cRango, 
+	cUnidad) 
+	values('00000000000000000000', 
+	(SELECT cID FROM tProductoAtributo WHERE cProducto='GE100934)', 
+	'00000000000000000036', 
+	'0', 
+	'1-5', 
+	'ppm');
+*/
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pSaveAnalisisComponent
+@id			char(20),
+@requerido		decimal(8, 2),
+@analisis            	decimal(8, 2),
+@desviacionRelativa	decimal(8, 2)
+AS 
+
+UPDATE tRSolicitudComponente 
+SET cRequerido=@requerido, cAnalisis=@analisis, cDesviacionRelativa=@desviacionRelativa
+WHERE cID=@id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pSaveNewComponent
+@producto	char(20),
+@componente	char(20),
+@relleno	smallint,
+@rango		varchar(20),
+@unidad		varchar(5)
+AS
+
+DECLARE @id_random char(20);
+
+SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+WHILE (EXISTS(SELECT cID FROM tRProductoComponente WHERE cID = @id_random))
+BEGIN
+	SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+END
+
+INSERT INTO tRProductoComponente(cID, cProducto, cComponente, cRelleno, cRango, cUnidad)
+VALUES(@id_random, @producto, @componente, @relleno, @rango, @unidad);
+
+-- print(@id_random)
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pUpdate2Patron
+@id			char(20),
+@numero			varchar(5),
+@compuesto		varchar(50),
+@composicion		varchar(35),
+@cilindro		varchar(15),
+@fechaExpiracion	datetime
+AS
+
+UPDATE tPatron SET cNumero=@numero, cCompuesto=@compuesto, cComposicion=@composicion, cCilindro=@cilindro, cFechaExpiracion=@fechaExpiracion
+WHERE cID = @id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE procedure pUpdateAnalisis
+@id char(20),
+@analisis varchar(50)
+AS
+
+UPDATE tSolicitud 
+SET cAnalisis=@analisis 
+WHERE cID=@id
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pUpdateComentario
+@id char(20),
+@comentario varchar(300)
+AS
+
+UPDATE	tSolicitudDetalle
+SET	cComentario = @comentario
+WHERE	cID=@id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pUpdateContacto
+@id char(20),
+@contacto varchar(100)
+AS
+
+UPDATE tSolicitud 
+SET cContacto = @contacto
+WHERE cID=@id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pUpdateEstabilidadGarantizada
+@id		char(20),
+@estabilidadGarantizada	int
+AS
+
+UPDATE tProductoAtributo 
+SET cEstabilidadGarantizada = @estabilidadGarantizada
+WHERE cID = @id
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create  proc pUpdateExpiracion
+@id char(20),
+@expiracion int
+AS
+
+UPDATE tSolicitudDetalle
+SET cExpiracion = @expiracion
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pUpdateExpiracionProd
+@id		char(20),
+@expiracion	int
+AS
+
+UPDATE tProductoAtributo 
+SET cExpiracion = @expiracion
+WHERE cID = @id
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pUpdateLitros
+@id char(20),
+@litros decimal
+AS
+
+UPDATE tSolicitudDetalle
+SET cLitros = @litros
+WHERE cID=@id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pUpdateMetodo
+@id	char(20),
+@metodo	char(20),
+@enable	bit
+AS
+
+DECLARE @id_random char(20);
+
+IF(@enable=1)
+BEGIN
+	SET @id_random = CAST(CEILING(RAND()*1000000000) AS INT);
+	INSERT INTO tRSolicitudMetodoAnalitico(cID, cSolicitud, cMetodo)
+	VALUES(@id_random, @id, @metodo);
+END
+ELSE
+BEGIN
+	DELETE FROM tRSolicitudMetodoAnalitico WHERE cSolicitud = @id AND cMetodo = @metodo;
+END
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pUpdateMetodoPreparacionPrd
+@id		char(20),
+@metodoPreparacion	char(20)
+AS
+
+UPDATE tProductoAtributo 
+SET cMetodoPreparacion = @metodoPreparacion
+WHERE cID = @id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create procedure pUpdateNivelConfianza
+@id char(20),
+@nivelConfianza int
+AS
+
+UPDATE tSolicitudDetalle
+SET cNivelConfianza=@nivelConfianza
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE proc pUpdateNumeroPatron
+@id char(20),
+@numeroPatron varchar(5)
+AS
+
+UPDATE tSolicitudDetalle
+SET cNumeroPatron = @numeroPatron
+WHERE cID=@id
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE procedure pUpdateOrden
+@id char(20),
+@orden varchar(10)
+AS
+
+UPDATE tSolicitud 
+SET cOrden = @orden
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create  proc pUpdatePMinUso
+@id char(20),
+@pMinUso int
+AS
+
+UPDATE tSolicitudDetalle
+SET cPMinUso = @pMinUso
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create proc pUpdatePoLlenado
+@id char(20),
+@PoLlenado decimal
+AS
+
+UPDATE tSolicitudDetalle
+SET cPoLlenado = @PoLlenado
+WHERE cID=@id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create  proc pUpdateTMinUso
+@id char(20),
+@tMinUso int
+AS
+
+UPDATE tSolicitudDetalle
+SET cTMinUso = @tMinUso
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pUpdateTipoCilindro
+@id char(20),
+@tipoCilindro varchar(20)
+AS
+
+UPDATE tSolicitudDetalle
+SET cTipoCilindro = @tipoCilindro
+WHERE cID=@id
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE PROC pUpdateTipoProductoPrd
+@id		char(20),
+@tipoProducto	char(20)
+AS
+
+UPDATE tProductoAtributo SET cTipoProducto=@tipoProducto WHERE cID = @id
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create procedure pUpdateToleranciaPreparacion
+@id char(20),
+@toleranciaPreparacion int
+AS
+
+UPDATE tSolicitudDetalle
+SET cToleranciaPreparacion=@toleranciaPreparacion
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+create  proc pUpdateValvula
+@id char(20),
+@valvula char(20)
+AS
+
+UPDATE tSolicitudDetalle
+SET cValvula = @valvula
+WHERE cID=@id
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE proc pValidateAnalisis
+@id	char(20)
+AS
+
+print GETDATE()
+
+DECLARE @msg	varchar(255);
+
+SET @msg = '';
+
+IF exists(	SELECT cID, cCliente 
+		FROM tSolicitud 
+		WHERE cID = @id AND cCliente='')
+BEGIN
+	SET @msg = 'No hay cliente seleccionado';
+END
+
+IF exists(	SELECT		p.cID
+		FROM		tRSolicitudPatron AS r
+		LEFT JOIN	tPatron AS p ON r.cPatron = p.cID 
+		WHERE		r.cSolicitud = @id AND p.cFechaExpiracion <= GETDATE())
+BEGIN
+	SET @msg = 'Hay al menos un patrón expirado';
+END
+
+
+IF ((SELECT	COUNT(p.cID)
+		FROM		tRSolicitudPatron AS r
+		LEFT JOIN	tPatron AS p ON r.cPatron = p.cID 
+		WHERE		r.cSolicitud = @id) = 0)
+BEGIN
+	SET @msg = 'No hay patrones seleccionados';
+END
+
+
+
+
+SELECT @msg AS msg;
+
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+

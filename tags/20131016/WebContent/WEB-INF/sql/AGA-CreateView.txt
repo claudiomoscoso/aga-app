@@ -1,0 +1,119 @@
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tCilindro]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[tCilindro]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tCliente]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[tCliente]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tLoteFO]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[tLoteFO]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tProducto]') and OBJECTPROPERTY(id, N'IsView') = 1)
+drop view [dbo].[tProducto]
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE  VIEW dbo.tCilindro
+AS
+SELECT	rowid AS cID, 
+	id_lote_de_produccion AS cLote, 
+	numero_cilindro AS cCilindro, 
+	tipo_movimiento AS cMovimiento, 
+	ISNULL(numero_pedido,'') AS cVolumen
+FROM	DB_REPORTES.dbo.movimiento_cilindro
+where
+tipo_movimiento ='llenado'
+and
+id_lote_de_produccion is not null
+and
+sucursal='mai'
+and
+producto like 'GE%'
+and
+numero_cilindro not like '%baja%' 
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE VIEW dbo.tCliente
+AS
+SELECT     cliente AS cID, nombre_cliente AS cNombre
+FROM         DB_REPORTES.dbo.Clientes
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE VIEW dbo.tLoteFO
+AS
+SELECT     id_lote AS cID, id_lote AS cNumeroLote, fecha_lote AS cFecha, producto AS cProducto, sucursal AS cSucursal, Codigo_Pais AS cPais
+FROM         DB_REPORTES.dbo.lotes_de_produccion
+where
+sucursal='mai'
+and
+producto like 'GE%'
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE  VIEW dbo.tProducto
+AS
+SELECT     producto AS cID, 
+	nombre_producto AS cNombre, 
+	Descripcion_certificado AS cCertificado,
+
+  CASE Controla_lote_de_produccion_sn
+         WHEN 'S' THEN '1'
+         ELSE '0'
+      END AS cUsaLote
+FROM	DB_REPORTES.dbo.Producto
+WHERE
+Controla_lote_de_produccion_sn='S'
+and
+producto like 'ge%'
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		<xsl:for-each select="/Response/Fields/ProductTypes/row">
+			<xsl:choose>
+				<xsl:when test="cIsProduct=1">
+					<a href="ControlServlet?fldProduct={cID}&amp;bsServiceName=BSK.ShowProduct">
+						<xsl:if test="cFileName!='unknow'">
+							<img src="{/Response/Fields/ImagePath}{cID}/{cFileName}"/>
+						</xsl:if>
+						<xsl:value-of select="cName"/>
+					</a>
+				</xsl:when>
+				<xsl:otherwise>
+					<div style="width: 100px; height: 100px;">
+						<a href="ControlServlet?fldProduct={cID}&amp;bsServiceName=BSK.ShowProductType">
+							<xsl:if test="cFileName!='unknow'">
+								<img src="{/Response/Fields/ImagePath}pt{cID}/{cFileName}"/>
+							</xsl:if>
+							<xsl:value-of select="cName"/>
+						</a>
+					</div>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:choose>
+				<xsl:when test="(position() mod 3) = 0">
+					<br/>
+				</xsl:when>
+				<xsl:otherwise/>
+			</xsl:choose>
+		</xsl:for-each>
+		<!--
+		<xsl:copy-of select="/"/>
+		 -->
+	</xsl:template>
+</xsl:stylesheet>

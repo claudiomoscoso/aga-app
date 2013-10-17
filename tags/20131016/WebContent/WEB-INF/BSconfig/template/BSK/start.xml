@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/">
+		<br />
+		<xsl:for-each select="/Service/Response/Fields/users/User">
+			<span class="cLabel">
+				<a href="ControlServlet?bsServiceName=BSK.Main">
+					<img src="public/img/terminal.jpg" />
+					<br />
+					<xsl:value-of select="cName" />
+					<hr />
+				</a>
+			</span>
+		</xsl:for-each>
+
+		<form action="ControlServlet" method="post">
+			<input type="hidden" name="bsServiceName" value="USR.validLogin" />
+			<table>
+				<tr>
+					<td>
+						<span class="cLabel">Login</span>
+					</td>
+					<td>
+						<input Name="fldLogin" ID="fldLogin" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="cLabel">Password</span>
+					</td>
+					<td>
+						<input type="password" Name="fldPassword" ID="fldPassword" />
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Ingresar..." />
+		</form>
+		<!-- 
+			<xsl:copy-of select="/" />
+		-->
+	</xsl:template>
+</xsl:stylesheet>

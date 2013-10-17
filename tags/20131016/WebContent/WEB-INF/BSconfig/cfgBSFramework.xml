@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+	<Services>
+		<Service ID="BSF.root">
+			<Template ID="LoginForm-html5.xsl" UseContainer="0" />
+			<!-- LoginForm.xsl  -->
+		</Service>
+
+		<Service ID="BSF.LoginForm">
+			<Template ID="LoginForm.xsl" UseContainer="0" />
+		</Service>
+
+		<Service ID="BSF.menu">
+			<Process ID="GetMenuToSession" />
+			<Template ID="menu2.xsl" UseContainer="0" />
+
+			<Template ID="menu.xsl" UseContainer="0">
+				<Script src="public/bsMenu/outlookbar_definition.js" />
+			</Template>
+		</Service>
+
+		<Service ID="BSF.body">
+			<Process ID="GetMenuToSession" />
+			<Template ID="cuerpo.xsl" />
+		</Service>
+
+		<Service ID="BSF.error">
+			<Template ID="error.xsl" />
+		</Service>
+
+		<Service ID="BSF.logoff">
+			<Template ID="reloadsite.xsl" UseContainer="0" />
+		</Service>
+
+		<Service ID="BSF.ShowService">
+			<Template ID="ShowSession.xsl" UseContainer="0" />
+		</Service>
+
+		<Service ID="BSF.AsXML">
+			<Template ID="ServiceAsXML.xsl" UseContainer="0" />
+		</Service>
+		<Service ID="BSF.ajax" Ajax="text/xml">
+			<Process ID="ByPass2" />
+			<Process ID="ByPass2" />
+			<Template ID="reloadsite.xsl" UseContainer="1" />
+			<Process ID="ByPass2" /><Process ID="ByPass2" />
+		</Service>
+	</Services>
+
+	<Classes>
+		<Class ID="GetMenu" Name="cl.builderSoft.framework.user.service.GetMenu" />
+		<Class ID="GetMenuToSession" Name="cl.builderSoft.framework.user.service.GetMenuToSession" />
+
+		<Class ID="ByPass" Name="cl.builderSoft.framework.service.ByPass" />
+		<Class ID="ByPass2" Name="cl.builderSoft.framework.service.ByPass2" />
+	</Classes>
+</Module>

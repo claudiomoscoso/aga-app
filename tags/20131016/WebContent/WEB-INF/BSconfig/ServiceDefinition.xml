@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Services>
+	<ConfigManager>d:\\Works\\Eclipse\\bsDemo\\bsConfig\\ConfigManager.xml</ConfigManager>
+	<Service ID="readFile" Name="Carga de archivos de Clientes y Productos">
+		<Class>cl.builderSoft.aga.sdp.service.live.ProcessFile</Class>
+		<ProcessService/>
+		<NextTime Year="2005" Month="jul" Day="20" Hour="2" Minute="55"/>
+		<LastTime Year="2007" Month="ene" Day="9" Hour="22" Minute="22"/>
+		<Interval Year="0" Month="0" Day="0" Hour="0" Minute="3"/>
+		<Active>1</Active>
+		<Parameter>readFile</Parameter>
+		<LogFile/>
+	</Service>
+	
+	<Service ID="calculo" Name="Calculo de Precios">
+		<Class>cl.builderSoft.aga.sdp.service.live.CalculatePrice</Class>
+		<ProcessService>SDP.retrieveDateOfPrecess</ProcessService>
+		<NextTime Year="26" Month="dic" Day="25" Hour="4" Minute="19"/>
+		<LastTime Year="2006" Month="dic" Day="12" Hour="15" Minute="54"/>
+		<Interval Year="0" Month="0" Day="0" Hour="0" Minute="3"/>
+		<Active>1</Active>
+		<Parameter>calculo</Parameter>
+		<LogFile/>
+	</Service>
+	<!--
+	<Service ID="buildReport" Name="Report Generator">
+	<Class>cl.builderSoft.framework.service.live.ReadFile</Class>
+	<NextTime Year="" Month="" Day="" Hour="" Minute=""/>
+	<Interval Year="" Month="" Day="" Hour="" Minute=""/>
+	<Active>0</Active>
+	<Parameter>Saludos, soy un segundo parametro</Parameter>
+	<LogFile/>
+	</Service> -->
+	
+	<Service ID="buildExcel" Name="Generacion de archivos con reporte Excel">
+		<Class>cl.builderSoft.aga.sdp.service.live.BuildExcelFile2</Class>
+		<ProcessService/>
+		<NextTime Year="2005" Month="jul" Day="20" Hour="0" Minute="0"/>
+		<LastTime Year="2006" Month="dic" Day="19" Hour="10" Minute="52"/>
+		<Interval Year="0" Month="0" Day="0" Hour="0" Minute="1"/>
+		<Active>1</Active>
+		<Parameter>buildExcel</Parameter>
+		<LogFile/>
+	</Service>
+	<Service ID="buildPDF" Name="Generacion de cartas en archivos PDF">
+		<Class>cl.builderSoft.aga.sdp.service.live.BuildPDF</Class>
+		<ProcessService/>
+		<NextTime Year="2005" Month="ago" Day="16" Hour="10" Minute="48"/>
+		<LastTime Year="2007" Month="ene" Day="8" Hour="8" Minute="10"/>
+		<Interval Year="0" Month="0" Day="0" Hour="12" Minute="0"/>
+		<Active>1</Active>
+		<Parameter>buildPDF</Parameter>
+		<LogFile/>
+	</Service>
+	
+	<Service ID="buildFile" Name="Generacion de archivos para exportar a Front Office">
+		<Class>cl.builderSoft.aga.sdp.service.live.FileToFO2</Class>
+		<ProcessService/>
+		<NextTime Year="2005" Month="jul" Day="19" Hour="23" Minute="46"/>
+		<LastTime Year="2007" Month="ene" Day="8" Hour="8" Minute="10"/>
+		<Interval Year="0" Month="0" Day="0" Hour="0" Minute="1"/>
+		<Active>1</Active>
+		<Parameter>buildFile</Parameter>
+		<LogFile/>
+	</Service>
+	
+</Services>
